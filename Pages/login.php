@@ -2,11 +2,7 @@
   session_start();
   $message="";
   if(count($_POST)>0) {
-    $hostname = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "ocrds";
-    $conn = mysqli_connect("$hostname","$username","$password","$dbname")  or die('Unable To connect');
+    include_once '../php/db.php';
 
     $email=$_POST["email"];
     $password=$_POST["password"];
@@ -18,7 +14,7 @@
       $_SESSION['name']=$row['name'];    
       $_SESSION['email'] = $row['email'];
       echo $_SESSION['name'];
-      header('location:index.php');
+      header('location:../index.php');
     }
     else {
       $message = "Invalid Username or Password!";
@@ -42,12 +38,12 @@
 
 
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
 
-  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <link rel="stylesheet" type="text/css" href="../css/login_style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
@@ -62,7 +58,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
               <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->
-                <img src="images/logo2.png">
+                <img src="../images/logo2.png">
               </a>
               <button class="navbar-toggler dtoggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -70,7 +66,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.php">Home</a>
+                    <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                   </li>
                   
                   <li class="nav-item dropdown">
@@ -85,13 +81,13 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/about.php">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/faq.php">FAQ</a>
+                    <a class="nav-link" href="faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
                     <?php
@@ -114,10 +110,10 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="login.php">User</a></li>
                       <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
+                    </ul> -->
                   </li>
                 </ul>
                 <form class="d-flex">
@@ -129,8 +125,8 @@
           </nav>
 </div>
 
-<script src="Js/bootstrap.min.js"></script>
-<script src="Js/jquery-3.6.0.min.js"></script>
+<script src="../Js/bootstrap.min.js"></script>
+<script src="../Js/jquery-3.6.0.min.js"></script>
 <!-- navigation ends -->
 
 	

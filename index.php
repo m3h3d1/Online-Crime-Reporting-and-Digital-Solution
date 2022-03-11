@@ -67,8 +67,8 @@
                           Login
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="login.php">User</a></li>
-                          <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
+                          <li><a class="dropdown-item" href="pages/login.php">User</a></li>
+                          <li><a class="dropdown-item" href="pages/official_login.php">Admin</a></li>
                         </ul>';
                       }
 
@@ -76,10 +76,10 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="login.php">User</a></li>
-                      <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="pages/login.php">User</a></li>
+                      <li><a class="dropdown-item" href="pages/official_login.php">Admin</a></li>
+                    </ul> -->
                   </li>
                 </ul>
                 <form class="d-flex">
