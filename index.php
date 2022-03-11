@@ -50,6 +50,9 @@
                     <a class="nav-link" href="Pages/about.php">About Us</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="Pages/faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
