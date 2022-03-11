@@ -57,122 +57,44 @@ nav{
 
 
 
-
-/*contact page css start*/
-.c-head{
-    margin-top: 50px;
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
 }
-.c-head h1{
-    text-align: center;
-    font-family: 'Roboto';
-    font-weight: 800;
-    font-size: 62px;
-    color: rgb(17, 23, 78);
+body{
+    background-image: url(../images/bg1.jpg);
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
 }
-.c-head h2{
-    position: absolute;
-    color: rgb(155, 155, 155);
-    font-family: 'Roboto';
-    font-weight: 800;
-    font-size: 80px;
-    text-align: center;
-    top: 147px;
-    left: 38%;
-    text-transform: uppercase;
-    opacity: 0.2;
+nav{
+    padding: 100px 50px;
+    background: rgb(14, 13, 58);
+    position: fixed;
     
 }
-.gmap{
-    text-align: center;
-    margin-top: 80px;
+.navbar-brand img{
+    display: block;
 }
-.gmap p{
-    height: 40px;
-    width: 1000px;
-    background: rgb(13, 14, 75);
-    position: absolute;
-    left: 17.1%;
-    top: 270px;
-    padding: 5px 20px;
-    text-align: left;
-    font-family: 'Open-Sans';
-    font-weight: 500;
-    font-size: 20px;
+.navbar-nav{
+    float: right;
+    padding-left: 50px;
+    text-align: right;
+    position: fixed;
+}
+.navbar-nav .nav-link{
+    text-align: right;
     color: aliceblue;
-}
-.gmap p i{
-    font-size: 18px;
-    padding-right: 10px;
-}
-.cont-add{
-    float: left;
-    padding-left: 30px;
-    margin-top: 50px;
-    background: rgb(13, 17, 54);
-    color: aliceblue;
-    margin-bottom: 30px;
-}
-.cont-data{
-    float: left;
-}
-.cont-data h3{
-    font-family: 'Roboto';
+    float: right;
+    font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 32px;
-    margin-top: 30px;
+    font-size: 16px;
+    margin: 0 10px;
 }
-.cont-data p{
-    font-family: 'Open-Sans';
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 40px;
-}
-.cont-data ul{
-    list-style-type: none;
-    float: left;
-    margin-right: 30px;
-    padding-top: 10px;
-}
-.cont-data ul li{
-    font-family: 'Open-Sans';
-    font-weight: 500;
-    font-size: 18px;
-}
-.cont-data ul li i{
-    padding-right: 10px;
-}
-.cont-form h3{
-    font-family: 'Roboto';
-    font-weight: 900;
-    font-size: 32px;
-    margin-top: 50px;
-    text-align: center;
-    color: black;
-}
-.cont-form form{
-    text-align: left;
-    width: 1000px;
-    margin-left: 250px;
-}
-form label{
-    font-family: 'Open-Sans';
+.navbar-nav .nav-link:hover{
+    color: #3574d7;
     font-weight: 700;
-    font-size: 20px;
 }
-form #name, #email{
-    height: 50px;
-    
-}
-form button{
-    margin-left: 450px;
-    margin-bottom: 50px;
-}
-form .btn{
-    padding: 10px 50px;
-    font-family: 'Open-Sans';
-    font-weight: 700;
-    font-size: 20px;
-    background: rgb(16, 10, 41);
-}
-/*contact page css end*/
