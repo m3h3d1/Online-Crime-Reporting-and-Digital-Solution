@@ -58,9 +58,10 @@
                   <li class="nav-item dropdown">
                     <?php
                       if($_SESSION["name"]) {
-                      ?>
-                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
-                      <?php
+                        echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; 
+                    ?>. 
+                      <a href="php/logout_session.php" tite="Logout">Logout. </a>
+                    <?php
                       }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
