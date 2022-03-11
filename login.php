@@ -1,41 +1,33 @@
 <?php 
-  $hostname = "localhost";
-  $username = "root";
-  $password = "";
-  $dbname = "ocrds";
-  $conn = mysqli_connect("$hostname","$username","$password","$dbname");
-
-
   session_start();
-  if ($conn) {
-    if(isset($_POST["login"]))
-      {
-          $email=$_POST["email"];
-          $password=$_POST["password"];
+  $message="";
+  if(count($_POST)>0) {
+    $hostname = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "ocrds";
+    $conn = mysqli_connect("$hostname","$username","$password","$dbname")  or die('Unable To connect');
 
-          $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
-          $res=mysqli_query($conn,$sqli);
-              $row = mysqli_fetch_array($res);
-          if(mysqli_num_rows($res)>0){
-          $_SESSION['email']=$email;    
-          $_SESSION['id'] = $row['id'];
-          header('location:index.php');
-          }
-          else
-      {
-        echo "<script type='text/javascript'> alert('You dont have a account.Register First!')</script>";
+    $email=$_POST["email"];
+    $password=$_POST["password"];
 
-        
-          }
-        
-      }
-      
+    $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
+    $res=mysqli_query($conn,$sqli);
+    $row = mysqli_fetch_array($res);
+    if(mysqli_num_rows($res)>0){
+      $_SESSION['name']=$row['name'];    
+      $_SESSION['email'] = $row['email'];
+      echo $_SESSION['name'];
+      header('location:index.php');
+    }
+    else {
+      $message = "Invalid Username or Password!";
+    }
+    echo $_SESSION['name'];
   }
-  else
-  {
-      echo 'Try again';
-  }
-
+  // if(isset($_SESSION["email"])) {
+  //   header("Location:index.php");
+  // }
 ?>
 
 
@@ -61,7 +53,7 @@
   <div class="form">
 
     <form method="post" action="login.php" >
-      <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-content: center;" loop  autoplay></lottie-player>
+      <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-ntent: center;" loop  autoplay></lottie-player>
       <input type="text" name="email" placeholder="&#xf007;  Email"/>
       <input type="password" name="password"  placeholder="&#xf023;  Password"/> 
       <!-- id="password" -->
@@ -98,6 +90,7 @@
       }
     };
   </script>
+
+  <div class="message"><?php if($message!="") { echo $message; } ?></div>
 </body>
 </html>
-

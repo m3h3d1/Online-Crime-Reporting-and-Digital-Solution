@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +23,7 @@
     <div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
-              <a class="navbar-brand" href="https://www.police.gov.bd/">
+              <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->
                 <img src="images/logo2.png">
               </a>
               <button class="navbar-toggler dtoggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,11 +53,28 @@
                     <a class="nav-link" href="Pages/faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php
+                      if($_SESSION["name"]) {
+                      ?>
+                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
+                      <?php
+                      }else {
+                        // echo "<p style=\"color:white;\">Please login first .</p>";
+                        echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Login
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="login.php">User</a></li>
+                          <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
+                        </ul>';
+                      }
+
+                    ?>
+                    <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
-                    </a>
+                    </a> -->
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="userlogin.php">User</a></li>
+                      <li><a class="dropdown-item" href="login.php">User</a></li>
                       <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
                     </ul>
                   </li>
