@@ -9,12 +9,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 	
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     
 
     <title>Online GD</title>
@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
               <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->
-                <img src="images/logo2.png">
+                <img src="../images/logo2.png">
               </a>
               <button class="navbar-toggler dtoggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -48,19 +48,21 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/about.php">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/faq.php">FAQ</a>
+                    <a class="nav-link" href="faq.php">FAQ</a>
                   </li>
-                  <li class="nav-item dropdown">
+                  
                     <?php
                       if($_SESSION["name"]) {
                       ?>
-                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
+                    <?php
+                    	echo '<li class="nav-item dropdown">';
+                       echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="../php/logout_session.php" tite="Logout">Logout.
                       <?php
                       }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
@@ -134,7 +136,7 @@
         
         <div class="col-md-12 cont-form">
             <h3>Quick Contact</h3>
-            <form action="/action_page.php">
+            <form action="action_page.php">
                 <div class="mb-3 mt-3">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
@@ -154,7 +156,7 @@
 
     </div>
 
-    <script src="Js/bootstrap.min.js"></script>
-    <script src="Js/jquery-3.6.0.min.js"></script>
+    <script src="../Js/bootstrap.min.js"></script>
+    <script src="../Js/jquery-3.6.0.min.js"></script>
 </body>
 </html>
