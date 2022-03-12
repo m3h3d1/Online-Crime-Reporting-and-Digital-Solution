@@ -35,16 +35,19 @@
                   <li class="nav-item dropdown">
                     <?php
                       if($_SESSION["name"]) {
-                        echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; 
+                        echo '<p style="color: white;"> Welcome <code>'.$_SESSION["name"].'</code></p>'; 
 
                         echo '<li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>
-                        </li>';
+                          <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
 
-                        echo '<li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="#">Contact</a>
-                        </li>';
-                        }else {
+                        }
+                        elseif(isset($_SESSION['aid'])) {
+                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["aname"].' </code></p>';
+
+                          echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
+                        }
+                        else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Login
@@ -56,6 +59,7 @@
                       }
 
                     ?>
+                    </li>
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->

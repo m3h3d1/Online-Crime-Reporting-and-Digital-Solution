@@ -4,7 +4,7 @@
     header('home.php');
   }
   include "../php/db.php";
-  $unid = $_SESSION['nid'];
+  // $aid = $_SESSION['aid'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,31 +40,36 @@
 </div>
 
 
-
 <div>
   <br>
-<h2> User Complain History</h2>
+<h2> User Messages</h2>
 
 <table id="t">
   <thead>
     <tr>
-      <th scope="col">Complaint ID</th>
-      <th scope="col">Type of Crime</th>
+      <th scope="col">GD ID</th>
+      <th scope="col">NID</th>
+      <th scope="col">Type</th>
+      <th scope="col">Name</th>
       <th scope="col">Location of Crime</th>
+      <th scope="col">Thana</th>
       <th scope="col">Problem Statement</th>
     </tr>
   </thead>
   <?php
-      $query="select * from gd where nid='$unid' order by gdid desc";
+      $query="select * from gd order by gdid desc limit 10000";
       $result=mysqli_query($conn,$query);  
       while($rows=mysqli_fetch_assoc($result)){
   ?> 
 
   <tbody style="background-color: white; color: black;">
       <tr>
-        <td class="cgdid"><?php echo $rows['gdid']; ?></td>
-        <td class="ctype"><?php echo $rows['type']; ?></td>     
-        <td class="cloc"><?php echo $rows['location of crime']; ?></td>          
+        <td class="five"><?php echo $rows['gdid']; ?></td>
+        <td class="five"><?php echo $rows['nid']; ?></td>     
+        <td class="ten"><?php echo $rows['type']; ?></td>          
+        <td class="ten"><?php echo $rows['name']; ?></td>          
+        <td class="twenty"><?php echo $rows['location of crime']; ?></td>          
+        <td class="ten"><?php echo $rows['thana name']; ?></td>          
         <td class="cproblem"><?php echo $rows['problem statement']; ?></td>          
       </tr>
     </tbody>
@@ -74,15 +79,6 @@
   ?>
 </table>
 </div>
-<!-- <div style="position: fixed;
-   left: 0;
-   bottom: 0;
-   width: 100%;
-   height: 30px;
-   background-color: rgba(0,0,0,0.8);
-   color: white;
-   text-align: center;">
-</div>  -->
 
 
 <!-- Footer -->

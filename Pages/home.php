@@ -45,7 +45,7 @@
                         elseif(isset($_SESSION['aid'])) {
                             echo '<h1>Welcome!</h1>
                             <a href="message.php"><button type="button" class="btn btn-outline-success">User Messages</button></a>
-                            <a href="allcomplain.php"><button type="button" class="btn btn-outline-secondary">User Complains</button></a>';
+                            <a href="allcomplains.php"><button type="button" class="btn btn-outline-secondary">User Complains</button></a>';
                         }
                         else {
                             echo '
