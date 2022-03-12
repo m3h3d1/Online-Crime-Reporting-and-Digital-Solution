@@ -50,22 +50,26 @@
                     <a class="nav-link" href="Pages/about.php">About Us</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                  </li>
+                  <li class="nav-item">
                     <a class="nav-link" href="Pages/faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
                     <?php
                       if($_SESSION["name"]) {
-                      ?>
-                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
-                      <?php
+                        echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; 
+                    ?>. 
+                      <a href="php/logout_session.php" tite="Logout">Logout. </a>
+                    <?php
                       }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Login
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <li><a class="dropdown-item" href="login.php">User</a></li>
-                          <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
+                          <li><a class="dropdown-item" href="pages/login.php">User</a></li>
+                          <li><a class="dropdown-item" href="pages/official_login.php">Admin</a></li>
                         </ul>';
                       }
 
@@ -73,10 +77,10 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="login.php">User</a></li>
-                      <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="pages/login.php">User</a></li>
+                      <li><a class="dropdown-item" href="pages/official_login.php">Admin</a></li>
+                    </ul> -->
                   </li>
                 </ul>
                 <form class="d-flex">

@@ -12,6 +12,65 @@ body{
     background-size: 100%;
 }
 nav{
+    background: rgb(14, 13, 58);
+    position: fixed;
+    
+}
+.navbar-brand img{
+    display: block;
+    margin-left: 30px;
+}
+.navbar-nav{
+    float: right;
+    padding-left: 40px;
+}
+.navbar-nav .nav-link{
+    text-align: right;
+    color: aliceblue;
+    float: right;
+    padding: 10px 40px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    margin: 0 10px;
+}
+.clr{
+    clear: both;
+}
+.foot{
+    background: rgb(25, 24, 41);
+    color: aliceblue;
+    margin-top: 10px;
+    padding: 5px;
+}
+.foot p{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    padding: 5px;
+}
+
+
+
+
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    outline: 0;
+}
+body{
+    background-image: url(../images/bg1.jpg);
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: 100%;
+}
+nav{
     padding: 100px 50px;
     background: rgb(14, 13, 58);
     position: fixed;
@@ -39,4 +98,3 @@ nav{
     color: #3574d7;
     font-weight: 700;
 }
-
