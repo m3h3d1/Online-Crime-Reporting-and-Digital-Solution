@@ -1,3 +1,16 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['x']))
+    header("location:login.php");
+  include_once "../php/db.php";
+  $unid = $_SESSION['nid'];
+
+
+  $result=mysqli_query($conn,"SELECT * FROM user where nid='$unid' ");
+  $q=mysqli_fetch_assoc($result);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,7 +85,9 @@
             <form class="row g-3">
             <div class="col-12">
                 <label for="nid" class="form-label">NID/Birth certificate no</label>
-                <input type="text" class="form-control" id="nid" placeholder="Enter your NID/Birth certificate no">
+                <?php
+                  echo '<input type="text" class="form-control" id="nid" placeholder="$unid">';
+                ?>
             </div>
             <div class="col-12">
                 <label for="gdtype" class="form-label">Type of GD</label>
@@ -92,18 +107,6 @@
             <div class="col-12">
                 <label for="faname" class="form-label">Father's name</label>
                 <input type="text" class="form-control" id="faname" placeholder="Enter your father's name">
-            </div>
-
-
-            <div class="col-6">
-                <label for="presentad" class="form-label">Present address</label>
-                <input type="text" class="form-control" id="presentad" placeholder="Enter your present address">
-            </div>
-
-
-            <div class="col-6">
-                <label for="permaad" class="form-label">Permanent address</label>
-                <input type="text" class="form-control" id="permaad" placeholder="Enter your permanent address">
             </div>
 
             <div class="col-8">
