@@ -50,7 +50,7 @@
                     <a class="nav-link" href="Pages/about.php">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    <a class="nav-link" aria-current="page" href="/Pages/contact.php">Contact</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="Pages/faq.php">FAQ</a>
