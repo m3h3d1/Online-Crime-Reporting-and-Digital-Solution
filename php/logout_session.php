@@ -5,7 +5,7 @@
     }
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,4 +16,4 @@
     <h2>Welcome <?php echo $_SESSION['name']; ?></h2>
     <a href = "logout_session.php">Logout</a>
 </body>
-</html>
+</html> -->
