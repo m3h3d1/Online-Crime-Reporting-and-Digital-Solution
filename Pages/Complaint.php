@@ -8,6 +8,7 @@
 
   $result=mysqli_query($conn,"SELECT * FROM user where nid='$unid' ");
   $q=mysqli_fetch_assoc($result);
+  $uname = $q['name'];
 ?>
 
 
@@ -61,7 +62,7 @@
                     <a class="nav-link" href="about.php">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="./faq.php">FAQ</a>
+                    <a class="nav-link" href="faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -82,16 +83,14 @@
           </nav>
         <div class="container">
     
-            <form class="row g-3">
+            <form class="row g-3" action="../php/submitComplaint.php" method="post">
             <div class="col-12">
                 <label for="nid" class="form-label">NID/Birth certificate no</label>
-                <?php
-                  echo '<input type="text" class="form-control" id="nid" placeholder="$unid">';
-                ?>
+                <input type="text" class="form-control" id="nid" name="nid" placeholder="<?php echo $unid; ?>">
             </div>
             <div class="col-12">
                 <label for="gdtype" class="form-label">Type of GD</label>
-                    <select id="gdtype" class="form-select">
+                    <select id="gdtype" class="form-select" name="gdtype">
                     <option selected>Choose...</option>
                     <option>Emergency</option>
                     <option>Regular</option>
@@ -101,38 +100,33 @@
             
             <div class="col-12">
                 <label for="fname" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fname" placeholder="Enter your full name">
-            </div>
-
-            <div class="col-12">
-                <label for="faname" class="form-label">Father's name</label>
-                <input type="text" class="form-control" id="faname" placeholder="Enter your father's name">
+                <input type="text" class="form-control" id="fname" name="name" placeholder="<?php echo $uname; ?>">
             </div>
 
             <div class="col-8">
                 <label for="loc" class="form-label">Location of crime</label>
-                <input type="text" class="form-control" id="loc">
+                <input type="text" class="form-control" id="loc" name="location">
             </div>
 
             <div class="col-4">
                 <label for="thana" class="form-label">Select Thana</label>
-                    <select id="thana" class="form-select">
-                    <option selected>Choose...</option>
-                    <option>Dhaka</option>
-                    <option>Chittagong</option>
-                    <option>Other</option>
+                    <select id="thana" class="form-select" name="thana">
+                      <option selected>Choose...</option>
+                      <option>Dhaka</option>
+                      <option>Chittagong</option>
+                      <option>Other</option>
                     </select>
             </div>
 
             <div class="col-12">
                 <label for="problem" class="form-label">Problem Statement</label>
-                <textarea class="form-control" id="problem" rows="3"></textarea>
+                <textarea class="form-control" id="problem" rows="3" name="problem"></textarea>
             </div>
 
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <label for="fileup" class="form-label">Upload your image</label>
                 <input class="form-control" type="file" id="fileup">
-            </div>
+            </div> -->
 
             <div class="col-12">
                 <div class="form-check">
@@ -143,27 +137,12 @@
                 </div>
             </div>
             <div class="col-12">
-                <button type="submit" class="btn btn-secondary">
+                <button type="submit" class="btn btn-secondary" name="submit">
                     Submit
                 </button>
             </div>
             </form>
-</div>
-          <!-- <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="content">
-                  <h1>Have a Complaint?</h1>
-                  <h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
-                  <hr>
-                    <a href="registration.php" aria-pressed="true">
-                    <button type="button" class="btn btn-outline-secondary">Sign up!</button>
-                      </a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
+      </div>
 
     </div>
 
