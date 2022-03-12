@@ -1,7 +1,30 @@
-<?php
+<?php 
   session_start();
-?>
+  $message="";
+  if(count($_POST)>0) {
+    include_once '../php/db.php';
 
+    $email=$_POST["email"];
+    $password=$_POST["password"];
+
+    $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
+    $res=mysqli_query($conn,$sqli);
+    $row = mysqli_fetch_array($res);
+    if(mysqli_num_rows($res)>0){
+      $_SESSION['name']=$row['name'];    
+      $_SESSION['email'] = $row['email'];
+      echo $_SESSION['name'];
+      header('location:../index.php');
+    }
+    else {
+      $message = "Invalid Username or Password!";
+    }
+    // echo $_SESSION['name'];
+  }
+  // if(isset($_SESSION["email"])) {
+  //   header("Location:index.php");
+  // }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,11 +45,12 @@
 </head>
 <body>
 
-    <div class="container-fluid">
+    <!-- navigation starts -->
+<div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
               <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->
-                <img src="images/logo2.png">
+                <img src="../images/logo2.png">
               </a>
               <button class="navbar-toggler dtoggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -34,7 +58,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="../index.php">Home</a>
                   </li>
                   
                   <li class="nav-item dropdown">
@@ -49,13 +73,13 @@
                     </ul>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/about.php">About Us</a>
+                    <a class="nav-link" href="about.php">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Contact</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="Pages/faq.php">FAQ</a>
+                    <a class="nav-link" href="faq.php">FAQ</a>
                   </li>
                   <li class="nav-item dropdown">
                     <?php
@@ -78,10 +102,10 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="login.php">User</a></li>
                       <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
+                    </ul> -->
                   </li>
                 </ul>
                 <form class="d-flex">
@@ -91,6 +115,12 @@
               </div>
             </div>
           </nav>
+</div>
+
+<script src="../Js/bootstrap.min.js"></script>
+<script src="../Js/jquery-3.6.0.min.js"></script>
+<!-- navigation ends -->
+
           
 
 
