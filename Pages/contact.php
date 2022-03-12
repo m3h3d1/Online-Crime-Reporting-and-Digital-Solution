@@ -106,7 +106,7 @@
             </div>
         <div class="col-md-12 cont-form">
             <h3>Quick Contact</h3>
-            <form action="action_page.php">
+            <form action="../php/submitMessage.php" method="post">
                 <div class="mb-3 mt-3">
                     <label for="name">Name:</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name">
@@ -117,9 +117,9 @@
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="message">Messages:</label>
-                    <textarea class="form-control" rows="5" id="message" name="text"></textarea>
+                    <textarea class="form-control" rows="5" id="message" name="message"></textarea>
                   </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary" name="submit">Submit</button>
               </form>
         </div>
       </div>

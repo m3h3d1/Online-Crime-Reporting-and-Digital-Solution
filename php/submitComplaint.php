@@ -15,8 +15,10 @@
         $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem')";
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
-            echo 'Data inserted';
-            header('location:../pages/successfulsub.php');
+            echo '<script type="text/javascript">
+                alert("Message Sent!"); 
+                document.location = "../pages/complaint.php";
+            </script>';
         }
         else {
             echo "Error: " . $sql . "
