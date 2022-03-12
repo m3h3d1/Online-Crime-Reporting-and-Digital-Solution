@@ -237,7 +237,11 @@ It tends to explore innovative practices in addressing the challenges of the tim
         </div>
     </div>
 
-
+<!-- Footer -->
+<?php
+    include "../php/footer.php";
+    ?>
+    <!-- Footer ends here -->
 <script src="../Js/bootstrap.min.js"></script>
 <script src="../Js/jquery-3.6.0.min.js"></script>
 <!-- navigation ends -->

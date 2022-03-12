@@ -17,57 +17,12 @@
 <body>
 
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
-            <div class="container-fluid dmenudiv">
-              <a class="navbar-brand" href="https://www.police.gov.bd/">
-                <img src="../images/logo2.png">
-              </a>
-              <button class="navbar-toggler dtoggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                  </li>
-                  
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Area     
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Dhaka</a></li>
-                      <li><a class="dropdown-item" href="#">Chittagong</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="#">Other</a></li>
-                    </ul>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="about.php">About Us</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./faq.php">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                  <!-- </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      Login
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="userlogin.php">User</a></li>
-                      <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
-                  </li> -->
-                </ul>
-                <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                  <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
-              </div>
-            </div>
-          </nav>
+            
+                   <!-- navbar starts -->
+    <?php
+        include "../php/navbar.php";
+    ?>
+    <!-- navbar ends --> 
           <div class="container">
             <div class="row">
               <div class="col-lg-12">
@@ -91,67 +46,11 @@
     
     <!-- Footer -->
     
-    <div class="foot bg-dark">
-          <div class="row" style="margin-top:200px; padding: 100px 50px; padding-bottom: 20px;">
-            
-
-            <div class="col-lg-4">
-            <h2> Online Crime Reporting</h2>
-                <p style="padding-right:85px; padding-top: 20px;">
-                  Online Crime reporting is a useful and handy way to submit any valid complaint to nearest police stations. Suspendisse cursus oncus odio pulvinar.  sollicitudin odio at cursus pulvinar. Nullam eros libero, hendrerit et velit sit amet, laoreet lobortis felis. Vestibulum tellus velit, interdum ac molestie quis, tristique sit amet tortor.    
-                </p>
-            </div>
-            <div class="col-lg-4">
-            <h2> Quick links</h2>
-              <ul>
-                      <li><a href="about.php">About us</a></li>
-                      <li><a href="faq.php">FAQ</a></li>
-                      <li><a href="https://www.police.gov.bd/">Bangladesh Police</a></li>
-                      <li><a href="http://www.mha.gov.bd/">Ministry of home affairs</a></li>
-                      <li><a href="https://bangladesh.gov.bd/index.php">Bangladesh national Portal</a></li>
-                      <li><a href="https://www.eprocure.gov.bd/">E Government procurment</a></li>
-                    </ul>
-            </div>
-
-            <div class="col-lg-4" style="text-align: right;">
-            <h2 style="padding-bottom: 20px;">Contact us</h2>
-              <p>
-                Bangladesh Police Police Headquarters 6, Phoenix Road, Fulbaria Dhaka - 1000<br><br><br>
-                Phone: +8801717771177,<br>
-                +8801717771227,<br>
-                +8801717771007,<br>
-                
-                Email: check123@gmail.com
-              </p>
-            </div>
-
-            
-            
-
-    </div>
-    <div class="tray container-fluid" slyle="color:white;">
-      <ul>
-        <li>
-          <a href="mailto:tatineesarkersunom@gmail.com"><i class="fa fa-envelope-open"></i></a>
-        </li>
-        <li>
-          <a href="https://www.facebook.com/BangladeshPoliceOfficialPage"><i class="fa fa-facebook"></i></a>
-        </li>
-        <li>
-          <a href="https://www.youtube.com/channel/UCiEciIZfqbetHCJe6oCi6FQ"><i class="fa fa-youtube"></i></a>
-        </li>
-        <li>
-          <a href="https://twitter.com/bd_police"><i class="fa fa-twitter"></i></a>
-        </li>
-        <li>
-          <a href="tel:+8801794064545"><i class="fa fa-phone"></i></a>
-        </li>
-        
-      </ul>
-    </div>
-
-</div>
-
+    <!-- Footer -->
+<?php
+    include "../php/footer.php";
+    ?>
+    <!-- Footer ends here -->
 
 
     <!-- Footer ends here -->
