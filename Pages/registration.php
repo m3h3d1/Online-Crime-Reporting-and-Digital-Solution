@@ -74,6 +74,13 @@
 
     <body class="body">
 
+    
+<!-- navbar starts -->
+<?php
+        include "../php/navbar.php";
+    ?>
+    <!-- navbar ends -->
+
 <!-- navigation starts -->
     <div class="container-fluid">
         
@@ -130,7 +137,7 @@
       </div>
 
       <!-- Footer -->
-<?php
+    <?php
     include "../php/footer.php";
     ?>
     <!-- Footer ends here -->

@@ -17,7 +17,7 @@
 <body>
 
     <div class="container-fluid">
-            
+           
                    <!-- navbar starts -->
     <?php
         include "../php/navbar.php";
