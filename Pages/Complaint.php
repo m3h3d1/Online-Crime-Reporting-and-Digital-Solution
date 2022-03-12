@@ -86,7 +86,7 @@
             <form class="row g-3" action="../php/submitComplaint.php" method="post">
             <div class="col-12">
                 <label for="nid" class="form-label">NID/Birth certificate no</label>
-                <input type="text" class="form-control" id="nid" name="nid" placeholder="<?php echo $unid; ?>">
+                <input type="text" class="form-control" id="nid" name="nid" disabled value="<?php echo $unid; ?>">
             </div>
             <div class="col-12">
                 <label for="gdtype" class="form-label">Type of GD</label>
@@ -100,7 +100,7 @@
             
             <div class="col-12">
                 <label for="fname" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="fname" name="name" placeholder="<?php echo $uname; ?>">
+                <input type="text" class="form-control" id="fname" name="name" disabled value="<?php echo $uname; ?>">
             </div>
 
             <div class="col-8">

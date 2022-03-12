@@ -4,19 +4,19 @@
   
     if (isset($_POST['submit']))
     {
-        $nid=$_POST['nid'];
+        $nid=$_SESSION['nid'];
         $gdtype=$_POST['gdtype'];
-        $name=$_POST['name']; 
+        $name=$_SESSION['name']; 
         $location=$_POST['location'];
         $thana=$_POST['thana'];
         $problem=$_POST['problem'];
         // photo
 
-        $sql="INSERT INTO user(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem')";
+        $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem')";
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
             echo 'Data inserted';
-            header('location:../index.php');
+            header('location:../pages/successfulsub.php');
         }
         else {
             echo "Error: " . $sql . "
