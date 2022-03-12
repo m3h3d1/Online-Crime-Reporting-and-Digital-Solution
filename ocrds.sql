@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 12, 2022 at 12:58 PM
+-- Generation Time: Mar 13, 2022 at 12:56 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -24,6 +24,27 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `aid` int(11) NOT NULL,
+  `aname` varchar(40) NOT NULL,
+  `aemail` varchar(40) NOT NULL,
+  `apassword` varchar(40) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`aid`, `aname`, `aemail`, `apassword`) VALUES
+(1, 'admin', 'admin@ocr.com', '1234'),
+(2, 'admin', 'admin@ocr.com', '1234');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `gd`
 --
 
@@ -31,12 +52,48 @@ CREATE TABLE `gd` (
   `gdid` int(9) NOT NULL,
   `nid` bigint(30) NOT NULL,
   `type` varchar(20) NOT NULL,
-  `full name` varchar(40) NOT NULL,
+  `name` varchar(40) NOT NULL,
   `location of crime` varchar(255) NOT NULL,
   `thana name` varchar(30) NOT NULL,
   `problem statement` text NOT NULL,
   `photo` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `gd`
+--
+
+INSERT INTO `gd` (`gdid`, `nid`, `type`, `name`, `location of crime`, `thana name`, `problem statement`, `photo`) VALUES
+(1, 0, 'Emergency', '', 'jhgjjhgj', 'Dhaka', 'jhgjgjh', ''),
+(2, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff jasdhas askjdhaks kaksjdha akjsd aksjdha kaksjd akjsdh aksjdb akjsdh kajsdhk ahsdhkjash baosdhkasjh aojsdkajshkdjhkahdkjahsk kjasdh.', ''),
+(3, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', ''),
+(4, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
+--
+
+CREATE TABLE `message` (
+  `mid` int(9) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `message`
+--
+
+INSERT INTO `message` (`mid`, `name`, `email`, `message`) VALUES
+(1, 'dsfsdf', 'asdas@gm', 'asda asdasd asdas'),
+(2, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
+(3, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
+(4, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
+(5, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
+(6, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
+(7, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss');
 
 -- --------------------------------------------------------
 
@@ -61,6 +118,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`nid`, `name`, `email`, `password`, `address`, `gender`, `mobile`) VALUES
 (12345678, 'Abul Kalam', 'kalam@gmail.com', '1234', 'jhgjhj', 'Male', '01978707676'),
 (12345679, 'ABCDEF', 'a@gmail.com', '1234', 'jgkjggkgjhgj', 'Male', '01978707671'),
+(2374234322, 'pppp', 'ppp@yahoo.com', '1234', 'kdjfkjdfhakdjsfh', 'Male', '01978787644'),
 (2374234523, 'asaasdas', 'eeem@gmail.com', '34242342', 'aksjadasdfsdf', 'Female', '01978707675'),
 (2374234771, 'asaadas', 'asdas@gm', '3423434', 'sdfsdfsd', 'Male', '01978787642');
 
@@ -69,16 +127,50 @@ INSERT INTO `user` (`nid`, `name`, `email`, `password`, `address`, `gender`, `mo
 --
 
 --
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`aid`);
+
+--
 -- Indexes for table `gd`
 --
 ALTER TABLE `gd`
   ADD PRIMARY KEY (`gdid`);
 
 --
+-- Indexes for table `message`
+--
+ALTER TABLE `message`
+  ADD PRIMARY KEY (`mid`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`nid`) USING BTREE;
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `aid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `gd`
+--
+ALTER TABLE `gd`
+  MODIFY `gdid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `message`
+--
+ALTER TABLE `message`
+  MODIFY `mid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
