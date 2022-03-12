@@ -14,7 +14,7 @@
       $_SESSION['name']=$row['name'];    
       $_SESSION['email'] = $row['email'];
       $_SESSION['nid'] = $row['nid'];
-      echo $_SESSION['name'];
+      // echo $_SESSION['name'];
       header('location:../index.php');
     }
     else {
@@ -70,6 +70,7 @@
 
 	
 <div class="login-page">
+  <h3 style="text-align:center; color: white;">User Login</h3>
   <div class="form">
 
     <form method="post" action="login.php" >

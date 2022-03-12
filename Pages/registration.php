@@ -91,6 +91,7 @@
 <!-- navigation ends -->
 
       <div class="login-page">
+      <h3 style="text-align:center; color: white;">User Registration</h3>
         <div class="form">
           <form method="post" action="registration.php">
             <lottie-player
