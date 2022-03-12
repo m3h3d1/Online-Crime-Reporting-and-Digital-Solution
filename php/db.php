@@ -6,6 +6,5 @@
     $username = "root";
     $password = "";
     $dbname = "ocrds";
-
-    $conn = mysqli_connect($hostname, $username, $password, $dbname) or die("Error");
+    $conn = mysqli_connect("$hostname","$username","$password","$dbname")  or die('Unable To connect');
 ?>
