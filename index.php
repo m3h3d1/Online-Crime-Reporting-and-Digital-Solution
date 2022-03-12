@@ -59,10 +59,15 @@
                     <?php
                       if($_SESSION["name"]) {
                         echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; 
-                    ?>. 
-                      <a href="php/logout_session.php" tite="Logout">Logout. </a>
-                    <?php
-                      }else {
+
+                        echo '<li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="php/logout_session.php">Logout</a>
+                        </li>';
+
+                        echo '<li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        </li>';
+                        }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                           Login

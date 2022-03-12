@@ -13,6 +13,7 @@
     if(mysqli_num_rows($res)>0){
       $_SESSION['name']=$row['name'];    
       $_SESSION['email'] = $row['email'];
+      $_SESSION['nid'] = $row['nid'];
       echo $_SESSION['name'];
       header('location:../index.php');
     }
