@@ -67,3 +67,60 @@ hr {
     height: 300px;
     max-width: 100%;
 }
+
+
+.foot{
+    color: white;
+    padding-bottom: 0;
+    margin-bottom: -21px;
+}
+
+
+
+.foot p{
+    color: #777;
+}
+
+.foot a{
+    text-decoration: none;
+    color: #777;
+    font-weight: bold;
+}
+.foot a:hover{
+    color: white;
+}
+.foot ul li{
+    list-style-type: none;
+    padding: 5px 0px;
+}
+.foot ul{
+    padding-left: 0;
+    padding-top: 20px;
+    
+}
+
+.foot h2{
+    font-weight: bold;
+}
+.tray{
+    text-align: right;
+}
+.tray ul{
+    padding-right: 30px;
+}
+.tray ul li{
+    display: inline-block;
+    padding: 0px 10px;
+    padding-bottom: 30px;
+    
+}
+
+.tray ul li a{
+    font-size: 25px;
+    color: white;
+}
+
+.tray ul li a:hover{
+    color: #777;
+    transition: .3s;
+}
