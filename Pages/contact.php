@@ -154,9 +154,9 @@
 </div>
           <div class="col-md-12 c-head">
             <h1>Contact Us</h1>
-            <h2>Message</h2>
+            <!-- <h2>Message</h2> -->
             <div class="gmap">
-                <p><i class="fa fa-map-marker"></i>Find us on Map</p>
+                <p style="text-align: center;"><i class="fa fa-map-marker"></i>Find us on Map</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.663652073585!2d90.4047336149041!3d23.723702384602504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8fbcc7d8b0b%3A0xd38c69e99ca87f67!2sBangladesh%20Police%20Headquarters%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1646932035278!5m2!1sen!2sbd" width="1000" height="450" style="border:10px solid aliceblue;" allowfullscreen="" loading="lazy"></iframe>
             </div>
             <div class="col-md-12 cont-add">
