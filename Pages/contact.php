@@ -1,27 +1,61 @@
-<?php
+<?php 
   session_start();
+  $message="";
+  if(count($_POST)>0) {
+    include_once '../php/db.php';
+
+    $email=$_POST["email"];
+    $password=$_POST["password"];
+
+    $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
+    $res=mysqli_query($conn,$sqli);
+    $row = mysqli_fetch_array($res);
+    if(mysqli_num_rows($res)>0){
+      $_SESSION['name']=$row['name'];    
+      $_SESSION['email'] = $row['email'];
+      $_SESSION['nid'] = $row['nid'];
+      echo $_SESSION['name'];
+      header('location:../index.php');
+    }
+    else {
+      $message = "Invalid Username or Password!";
+    }
+    // echo $_SESSION['name'];
+  }
+  // if(isset($_SESSION["email"])) {
+  //   header("Location:index.php");
+  // }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
+
+
+<!DOCTYPE HTML>
+<html lang="en" >
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+  <title>Contact</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-	
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/style.css">
-    
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="../css/contact.css">
 
-    <title>Online GD</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
+
 <body>
 
-    <div class="container-fluid">
+<!-- navigation starts -->
+<div class="container-fluid">
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
               <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->
@@ -33,7 +67,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="../index.php">Home</a>
                   </li>
                   
                   <li class="nav-item dropdown">
@@ -51,18 +85,16 @@
                     <a class="nav-link" href="about.php">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                    <a class="nav-link active" aria-current="page" href="contact.php">Contact</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="faq.php">FAQ</a>
                   </li>
-                  
+                  <li class="nav-item dropdown">
                     <?php
                       if($_SESSION["name"]) {
                       ?>
-                    <?php
-                    	echo '<li class="nav-item dropdown">';
-                       echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="../php/logout_session.php" tite="Logout">Logout.
+                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
                       <?php
                       }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
@@ -79,10 +111,10 @@
                     <!-- <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a> -->
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                       <li><a class="dropdown-item" href="login.php">User</a></li>
                       <li><a class="dropdown-item" href="official_login.php">Admin</a></li>
-                    </ul>
+                    </ul> -->
                   </li>
                 </ul>
                 <form class="d-flex">
@@ -92,12 +124,13 @@
               </div>
             </div>
           </nav>
-          
+</div>
 
 
-          <div class="col-md-12 c-head">
+
+<div class="col-md-12 c-head">
             <h1>Contact Us</h1>
-            <!-- <h2>Message</h2> -->
+            <h2>Message</h2>
             <div class="gmap">
                 <p style="text-align: center;"><i class="fa fa-map-marker"></i>Find us on Map</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.663652073585!2d90.4047336149041!3d23.723702384602504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8fbcc7d8b0b%3A0xd38c69e99ca87f67!2sBangladesh%20Police%20Headquarters%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1646932035278!5m2!1sen!2sbd" width="1000" height="450" style="border:10px solid aliceblue;" allowfullscreen="" loading="lazy"></iframe>
@@ -133,7 +166,7 @@
                     <li>+880-2-55102505</li>
                 </ul>
             </div>
-        
+            </div>
         <div class="col-md-12 cont-form">
             <h3>Quick Contact</h3>
             <form action="action_page.php">
@@ -154,9 +187,15 @@
         </div>
 
 
-    </div>
+    
 
-    <script src="../Js/bootstrap.min.js"></script>
-    <script src="../Js/jquery-3.6.0.min.js"></script>
+
+<script src="../Js/bootstrap.min.js"></script>
+<script src="../Js/jquery-3.6.0.min.js"></script>
+<!-- navigation ends -->
+
+	
+
+   
 </body>
 </html>
