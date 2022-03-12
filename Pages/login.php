@@ -41,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" href="../css/style.css">  -->
+    <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/responsive.css">
 
   <link rel="stylesheet" type="text/css" href="../css/login_style.css">
@@ -115,7 +115,7 @@
 
   <!-- Footer -->
   <?php
-    // include "../php/footer.php";
+    include "../php/footer.php";
     ?>
     <!-- Footer ends here -->
 </body>

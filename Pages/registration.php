@@ -70,7 +70,7 @@
       />
       <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-      <!-- <link rel="stylesheet" href="../css/style.css"> -->
+      <link rel="stylesheet" href="../css/style.css">
       <link rel="stylesheet" href="../css/responsive.css">
     
     </head>
@@ -133,7 +133,7 @@
 
       <!-- Footer -->
     <?php
-      // include "../php/footer.php";
+      include "../php/footer.php";
     ?>
     <!-- Footer ends here -->
     </body>

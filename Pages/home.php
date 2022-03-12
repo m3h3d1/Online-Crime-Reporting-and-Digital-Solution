@@ -33,20 +33,19 @@
             <div class="row">
               <div class="col-lg-12">
                 <div class="content">
-                  <h1>Have a Complaint?</h1>
                   
                   <hr>
                     <?php 
                         if(isset($_SESSION['nid'])) {
-                            echo '<a href="complaint.php" aria-pressed="true">
-                            <button type="button" class="btn btn-secondary">Click to Comlain!</button>
-                            </a><br><br>';
-                            echo '<a href="complaint.php" aria-pressed="true">
-                            <button type="button" class="btn btn-secondary">Check History</button>
-                            </a>';
+                            echo '<h1>Welcome!</h1>
+                            <a href="complaint.php"><button type="button" class="btn btn-outline-success">Submit a complaint</button></a>
+                            <a href="history.php"><button type="button" class="btn btn-outline-secondary">Check history</button></a>';
+                    
                         }
                         else {
-                            echo '<h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
+                            echo '
+                            <h1>Have a Complaint?</h1>
+                            <h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
                             <a href="registration.php" aria-pressed="true">
                             <button type="button" class="btn btn-secondary">Sign up!</button>
                             </a>';
