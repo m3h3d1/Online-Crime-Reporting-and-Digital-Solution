@@ -94,7 +94,7 @@
                     <?php
                       if($_SESSION["name"]) {
                       ?>
-                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="logout_session.php" tite="Logout">Logout.
+                      <?php echo '<p style="color: white;"> Welcome '.$_SESSION["name"].'</p>'; ?>. <a href="../php/logout_session.php" tite="Logout">Logout.
                       <?php
                       }else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
