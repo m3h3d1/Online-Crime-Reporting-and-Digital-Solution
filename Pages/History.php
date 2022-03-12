@@ -1,29 +1,10 @@
 -<?php 
   session_start();
-  $message="";
-  if(count($_POST)>0) {
-    include_once '../php/db.php';
-
-    $email=$_POST["email"];
-    $password=$_POST["password"];
-
-    $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
-    $res=mysqli_query($conn,$sqli);
-    $row = mysqli_fetch_array($res);
-    if(mysqli_num_rows($res)>0){
-      $_SESSION['name']=$row['name'];    
-      $_SESSION['email'] = $row['email'];
-      echo $_SESSION['name'];
-      header('location:../index.php');
-    }
-    else {
-      $message = "Invalid Username or Password!";
-    }
-    // echo $_SESSION['name'];
+  if(!isset($_SESSION['nid'])) {
+    header('home.php');
   }
-  // if(isset($_SESSION["email"])) {
-  //   header("Location:index.php");
-  // }
+  include "../php/db.php";
+  $unid = $_SESSION['nid'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,6 +26,8 @@
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title>Document</title>
+
+    <link href="../css/historytable.css" rel="stylesheet">
 </head>
 
 <body>
@@ -55,6 +38,92 @@
     ?>
     <!-- navbar ends --> 
 </div>
+
+
+<!-- 
+<div style="padding:50px;">
+      <table class="table table-bordered">
+       <thead class="thead-dark" style="background-color: black; color: white;">
+         <tr>
+          <th scope="col">Complaint Id</th>
+          <th scope="col">Type of Crime</th>
+          <th scope="col">Location of Crime</th>
+          <th scope="col">Problem Statement</th>
+        </tr>
+      </thead>
+
+<?php
+      $query="select * from gd where nid='$unid' order by gdid desc";
+      $result=mysqli_query($conn,$query);  
+      while($rows=mysqli_fetch_assoc($result)){
+    ?> 
+
+    <tbody style="background-color: white; color: black;">
+      <tr>
+        <td><?php echo $rows['gdid']; ?></td>
+        <td><?php echo $rows['type']; ?></td>     
+        <td><?php echo $rows['location of crime']; ?></td>          
+        <td><?php echo $rows['problem statement']; ?></td>          
+      </tr>
+    </tbody>
+    
+    <?php
+    } 
+    ?>
+  
+</table>
+ </div> 
+-->
+
+
+
+<div>
+  <br>
+<h2> User Complain History</h2>
+
+<table id="t">
+  <thead>
+    <tr>
+      <!-- <th>Example text</th>
+      <th>Example text</th>
+      <th>Here is a longer kajsdhkaj aksjkdha kajsd kajksd  piece of text</th>
+      <th>Example text</th> -->
+      <th scope="col">Complaint ID</th>
+      <th scope="col">Type of Crime</th>
+      <th scope="col">Location of Crime</th>
+      <th scope="col">Problem Statement</th>
+    </tr>
+  </thead>
+  <?php
+      $query="select * from gd where nid='$unid' order by gdid desc";
+      $result=mysqli_query($conn,$query);  
+      while($rows=mysqli_fetch_assoc($result)){
+  ?> 
+
+  <tbody style="background-color: white; color: black;">
+      <tr>
+        <td class="cgdid"><?php echo $rows['gdid']; ?></td>
+        <td class="ctype"><?php echo $rows['type']; ?></td>     
+        <td class="cloc"><?php echo $rows['location of crime']; ?></td>          
+        <td class="cproblem"><?php echo $rows['problem statement']; ?></td>          
+      </tr>
+    </tbody>
+
+  <?php
+    } 
+  ?>
+</table>
+</div>
+<!-- <div style="position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   height: 30px;
+   background-color: rgba(0,0,0,0.8);
+   color: white;
+   text-align: center;">
+</div>  -->
+
 
 <!-- Footer -->
 <?php

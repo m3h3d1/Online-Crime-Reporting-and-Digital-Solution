@@ -34,11 +34,24 @@
               <div class="col-lg-12">
                 <div class="content">
                   <h1>Have a Complaint?</h1>
-                  <h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
+                  
                   <hr>
-                    <a href="registration.php" aria-pressed="true">
-                    <button type="button" class="btn btn-secondary">Sign up!</button>
-                      </a>
+                    <?php 
+                        if(isset($_SESSION['nid'])) {
+                            echo '<a href="complaint.php" aria-pressed="true">
+                            <button type="button" class="btn btn-secondary">Click to Comlain!</button>
+                            </a><br><br>';
+                            echo '<a href="complaint.php" aria-pressed="true">
+                            <button type="button" class="btn btn-secondary">Check History</button>
+                            </a>';
+                        }
+                        else {
+                            echo '<h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
+                            <a href="registration.php" aria-pressed="true">
+                            <button type="button" class="btn btn-secondary">Sign up!</button>
+                            </a>';
+                        }
+                    ?>
                 </div>
               </div>
             </div>
@@ -56,7 +69,7 @@
     ?>
     <!-- Footer ends here -->
 
-    
+
     <script src="https://use.fontawesome.com/ef783540f8.js"></script>
     <script src="../Js/bootstrap.min.js"></script>
     <script src="../Js/jquery-3.6.0.min.js"></script>

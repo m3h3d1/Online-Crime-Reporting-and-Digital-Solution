@@ -63,7 +63,7 @@
 
 <div class="col-md-12 c-head">
             <h1>About Us</h1>
-            <h2>BD Police</h2>
+            <!-- <h2>BD Police</h2> -->
             <div class="col-md-6 a-data">
                 <div class="card">
                     <div class="card-body">
