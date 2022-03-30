@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 13, 2022 at 12:56 AM
+-- Generation Time: Mar 30, 2022 at 02:12 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -56,18 +56,20 @@ CREATE TABLE `gd` (
   `location of crime` varchar(255) NOT NULL,
   `thana name` varchar(30) NOT NULL,
   `problem statement` text NOT NULL,
-  `photo` varchar(255) NOT NULL
+  `photo` varchar(255) NOT NULL,
+  `status` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `gd`
 --
 
-INSERT INTO `gd` (`gdid`, `nid`, `type`, `name`, `location of crime`, `thana name`, `problem statement`, `photo`) VALUES
-(1, 0, 'Emergency', '', 'jhgjjhgj', 'Dhaka', 'jhgjgjh', ''),
-(2, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff jasdhas askjdhaks kaksjdha akjsd aksjdha kaksjd akjsdh aksjdb akjsdh kajsdhk ahsdhkjash baosdhkasjh aojsdkajshkdjhkahdkjahsk kjasdh.', ''),
-(3, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', ''),
-(4, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '');
+INSERT INTO `gd` (`gdid`, `nid`, `type`, `name`, `location of crime`, `thana name`, `problem statement`, `photo`, `status`) VALUES
+(1, 0, 'Emergency', '', 'jhgjjhgj', 'Dhaka', 'jhgjgjh', '', ''),
+(2, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff jasdhas askjdhaks kaksjdha akjsd aksjdha kaksjd akjsdh aksjdb akjsdh kajsdhk ahsdhkjash baosdhkasjh aojsdkajshkdjhkahdkjahsk kjasdh.', '', ''),
+(3, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '', ''),
+(4, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '', ''),
+(5, 12345679, 'Choose...', 'ABCDEF', 'aaaa', 'Chittagong', 'aaa', '', 'queue');
 
 -- --------------------------------------------------------
 
@@ -94,6 +96,22 @@ INSERT INTO `message` (`mid`, `name`, `email`, `message`) VALUES
 (5, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
 (6, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss'),
 (7, 'kajsd ', 'akjsd@gmail.com', 'sdkfj  ssss');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `police`
+--
+
+CREATE TABLE `police` (
+  `id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `mobile` varchar(15) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -145,6 +163,12 @@ ALTER TABLE `message`
   ADD PRIMARY KEY (`mid`);
 
 --
+-- Indexes for table `police`
+--
+ALTER TABLE `police`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
@@ -164,13 +188,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `gd`
 --
 ALTER TABLE `gd`
-  MODIFY `gdid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `gdid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
   MODIFY `mid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `police`
+--
+ALTER TABLE `police`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
