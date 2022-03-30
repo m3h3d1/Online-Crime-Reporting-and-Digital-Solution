@@ -47,6 +47,12 @@
                           echo '<li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
                         }
+                        elseif(isset($_SESSION['pid'])) {
+                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["pname"].' </code></p>';
+
+                          echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
+                        }
                         else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";
                         echo '<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -55,6 +61,7 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="../Pages/login.php">User</a></li>
                           <li><a class="dropdown-item" href="../Pages/official_login.php">Admin</a></li>
+                          <li><a class="dropdown-item" href="../Pages/officialPage.php">Official</a></li>
                         </ul>';
                       }
 

@@ -1,4 +1,4 @@
-<!-- Admin login -->
+<!-- Police login -->
 <?php 
   session_start();
   $message="";
@@ -8,13 +8,13 @@
     $email=$_POST["email"];
     $password=$_POST["password"];
 
-    $sqli ="SELECT * from admin where aemail='$email' AND apassword='$password' ";
+    $sqli ="SELECT * from police where email='$email' AND password='$password' ";
     $res=mysqli_query($conn,$sqli);
     $row = mysqli_fetch_array($res);
     if(mysqli_num_rows($res)>0){
-      $_SESSION['aname']=$row['aname'];    
-      $_SESSION['aemail'] = $row['aemail'];
-      $_SESSION['aid'] = $row['aid'];
+      $_SESSION['pname']=$row['name'];    
+      $_SESSION['pemail'] = $row['email'];
+      $_SESSION['pid'] = $row['pid'];
     //   echo "success";
       header('location:home.php');
     }
@@ -36,7 +36,7 @@
 <html lang="en" >
 <html>
 <head>
-  <title>official_login</title>
+  <title>Police Login</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -72,11 +72,11 @@
 <!-- navigation ends -->
 
 	
-<div class="official_login-page">
-    <h3 style="text-align:center; color: white;">Official Login</h3>
+<div class="police_login-page">
+    <h3 style="text-align:center; color: white;">Police Login</h3>
   <div class="form">
 
-    <form method="post" action="official_login.php" >
+    <form method="post" action="policeLogin.php" >
       <lottie-player src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"  background="transparent"  speed="1"  style="justify-ntent: center;" loop  autoplay></lottie-player>
       <input type="text" name="email" placeholder="&#xf007;  Email"/>
       <input type="password" name="password"  placeholder="&#xf023;  Password"/> 
@@ -84,7 +84,7 @@
       <i class="fas fa-eye" onclick="show()"></i> 
       <br>
       <br>
-      <button type="submit" name="official_login">Login</button>
+      <button type="submit" name="police_login">Login</button>
       <p class="message"></p>
     </form>
     <?php
@@ -94,7 +94,7 @@
         }
     ?>
 
-    <!-- <form class="official_login-form">
+    <!-- <form class="police_login-form">
       <button type="button" onclick="window.location.href='registration.php'">Register</button>
     </form> -->
   </div>
