@@ -34,7 +34,7 @@
                   </li>
                   <li class="nav-item dropdown">
                     <?php
-                      if($_SESSION["name"]) {
+                      if(isset($_SESSION['nid'])) {
                         echo '<p style="color: white;"> Welcome <code>'.$_SESSION["name"].'</code></p>'; 
 
                         echo '<li class="nav-item">
@@ -49,6 +49,12 @@
                         }
                         elseif(isset($_SESSION['pid'])) {
                           echo '<p style="color: white;"> Welcome <code> '.$_SESSION["pname"].' </code></p>';
+
+                          echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
+                        }
+                        elseif(isset($_SESSION['iid'])) {
+                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["iname"].' </code></p>';
 
                           echo '<li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';

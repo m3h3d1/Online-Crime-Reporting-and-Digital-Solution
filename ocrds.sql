@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 05:11 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.9
+-- Generation Time: Mar 30, 2022 at 08:41 PM
+-- Server version: 10.4.17-MariaDB
+-- PHP Version: 8.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -56,6 +56,25 @@ CREATE TABLE `chat` (
   `gdid` varchar(30) NOT NULL,
   `date` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `district`
+--
+
+CREATE TABLE `district` (
+  `district_id` int(11) NOT NULL,
+  `district_name` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `district`
+--
+
+INSERT INTO `district` (`district_id`, `district_name`) VALUES
+(1, 'Dhaka'),
+(2, 'Chittagong');
 
 -- --------------------------------------------------------
 
@@ -138,6 +157,25 @@ INSERT INTO `police` (`pid`, `name`, `email`, `password`, `gender`, `mobile`) VA
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thana`
+--
+
+CREATE TABLE `thana` (
+  `tid` int(11) NOT NULL,
+  `thana_name` varchar(30) NOT NULL,
+  `district_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `thana`
+--
+
+INSERT INTO `thana` (`tid`, `thana_name`, `district_id`) VALUES
+(1, 'Banani', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `user`
 --
 
@@ -179,6 +217,12 @@ ALTER TABLE `chat`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `district`
+--
+ALTER TABLE `district`
+  ADD PRIMARY KEY (`district_id`);
+
+--
 -- Indexes for table `gd`
 --
 ALTER TABLE `gd`
@@ -195,6 +239,12 @@ ALTER TABLE `message`
 --
 ALTER TABLE `police`
   ADD PRIMARY KEY (`pid`);
+
+--
+-- Indexes for table `thana`
+--
+ALTER TABLE `thana`
+  ADD PRIMARY KEY (`tid`);
 
 --
 -- Indexes for table `user`
@@ -219,6 +269,12 @@ ALTER TABLE `chat`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `district`
+--
+ALTER TABLE `district`
+  MODIFY `district_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `gd`
 --
 ALTER TABLE `gd`
@@ -235,6 +291,12 @@ ALTER TABLE `message`
 --
 ALTER TABLE `police`
   MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `thana`
+--
+ALTER TABLE `thana`
+  MODIFY `tid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

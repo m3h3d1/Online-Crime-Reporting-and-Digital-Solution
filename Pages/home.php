@@ -52,6 +52,11 @@
                           <a href="policeComplaints.php"><button type="button" class="btn btn-outline-success">User Complaints</button></a>';
                           // <a href="policeCompletedComplaints.php"><button type="button" class="btn btn-outline-secondary">Completed Complaints.php</button></a>';
                         }
+                        elseif(isset($_SESSION['iid'])) {
+                          echo '<h1>Welcome!</h1>
+                          <a href="thanaComplaints.php"><button type="button" class="btn btn-outline-success">User Complaints</button></a>';
+                          // <a href="policeCompletedComplaints.php"><button type="button" class="btn btn-outline-secondary">Completed Complaints.php</button></a>';
+                        }
                         else {
                             echo '
                             <h1>Have a Complaint?</h1>
