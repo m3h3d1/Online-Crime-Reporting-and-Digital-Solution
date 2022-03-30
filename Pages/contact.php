@@ -72,38 +72,7 @@
                 <p style="text-align: center;"><i class="fa fa-map-marker"></i>Find us on Map</p>
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.663652073585!2d90.4047336149041!3d23.723702384602504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8fbcc7d8b0b%3A0xd38c69e99ca87f67!2sBangladesh%20Police%20Headquarters%2C%20Dhaka!5e0!3m2!1sen!2sbd!4v1646932035278!5m2!1sen!2sbd" width="1000" height="450" style="border:10px solid aliceblue;" allowfullscreen="" loading="lazy"></iframe>
             </div>
-            <div class="col-md-12 cont-add">
-            <div class="col-md-4 cont-data">
-                <h3>Head Office Address</h3>
-                <p>Bangladesh Police Police Headquarters 6,Phoenix</br> Road,
-                     Fulbaria Dhaka - 1000</p>
-            </div>
-            <div class="col-md-8 cont-data">
-                <h3>Operation Control Room</h3>
-                <ul>
-                    <li><i class="fa fa-mobile"></i>Mobile :</li>
-                    <li>01320001299</li>
-                    <li>01320001300</li>
-                </ul>
-                <ul>
-                    <li><i class="fa fa-envelope"></i>Mail :</li>
-                    <li>oic_opscr@police.gov.bd</li>
-                </ul>
-                <ul>
-                    <li><i class="fa fa-phone-square"></i>Phone :</li>
-                    <li>+880-2-223381967</li>
-                    <li>+880-2-223383515</li>
-                </ul>
-                <ul>
-                    <li><i class="fa fa-fax"></i>Fax :</li>
-                    <li>+880-2-9563362</li>
-                    <li>+880-2-9563358</li>
-                    <li>+880-2-7126305</li>
-                    <li>+880-2-9562330</li>
-                    <li>+880-2-55102505</li>
-                </ul>
-            </div>
-            </div>
+            
         <div class="col-md-12 cont-form">
             <h3>Quick Contact</h3>
             <form action="../php/submitMessage.php" method="post">

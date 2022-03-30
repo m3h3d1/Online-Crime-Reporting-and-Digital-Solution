@@ -50,7 +50,8 @@
             <div class="col-12">
                 <label for="gdtype" class="form-label">Type of GD</label>
                     <select id="gdtype" class="form-select" name="gdtype">
-                    <option selected>Choose...</option>
+                    <option selected disabled>Choose...</option>
+                    <!-- <option label="Choose..."></option> -->
                     <option>Emergency</option>
                     <option>Regular</option>
                     <option>Other</option>
@@ -70,7 +71,7 @@
             <div class="col-4">
                 <label for="thana" class="form-label">Select Thana</label>
                     <select id="thana" class="form-select" name="thana">
-                      <option selected>Choose...</option>
+                      <option selected disabled>Choose...</option>
                       <option>Dhaka</option>
                       <option>Chittagong</option>
                       <option>Other</option>

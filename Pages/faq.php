@@ -64,7 +64,7 @@
 
 <div class="col-md-12 c-head">
             <h1>FAQ</h1>
-            <h2>Know More</h2>
+            <!-- <h2>Know More</h2> -->
   <div class="faq">
     <div class="card">
       <div class="card-body">

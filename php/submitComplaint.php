@@ -10,13 +10,14 @@
         $location=$_POST['location'];
         $thana=$_POST['thana'];
         $problem=$_POST['problem'];
+        $status = 'queue';
         // photo
 
-        $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem')";
+        $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`, `status`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem', '$status')";
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
             echo '<script type="text/javascript">
-                alert("Message Sent!"); 
+                alert("Report is submitted!"); 
                 document.location = "../pages/complaint.php";
             </script>';
         }
@@ -25,8 +26,7 @@
             " . mysqli_error($conn);
         }    
     }
-    else
-    {
+    else {
       echo '';
     }
 ?>

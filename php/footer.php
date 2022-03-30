@@ -5,7 +5,7 @@
             <div class="col-lg-4">
             <h2> Online Crime Reporting</h2>
                 <p style="padding-right:85px; padding-top: 20px;">
-                  Online Crime reporting is a useful and handy way to submit any valid complaint to nearest police stations. Suspendisse cursus oncus odio pulvinar.  sollicitudin odio at cursus pulvinar. Nullam eros libero, hendrerit et velit sit amet, laoreet lobortis felis. Vestibulum tellus velit, interdum ac molestie quis, tristique sit amet tortor.    
+                  Online Crime reporting is a useful and handy way to submit any valid complaint to the nearest police stations.    
                 </p>
             </div>
             <div class="col-lg-4">
@@ -39,7 +39,7 @@
     <div class="tray container-fluid" slyle="color:white;">
       <ul>
         <li>
-          <a href="mailto:tatineesarkersunom@gmail.com"><i class="fa fa-envelope-open"></i></a>
+          <a href="mailto:oic_opscr@police.gov.bd"><i class="fa fa-envelope-open"></i></a>
         </li>
         <li>
           <a href="https://www.facebook.com/BangladeshPoliceOfficialPage"><i class="fa fa-facebook"></i></a>

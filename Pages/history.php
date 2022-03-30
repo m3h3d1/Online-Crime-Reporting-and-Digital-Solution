@@ -49,6 +49,7 @@
   <thead>
     <tr>
       <th scope="col">Complaint ID</th>
+      <th scope="col">Status</th>
       <th scope="col">Type of Crime</th>
       <th scope="col">Location of Crime</th>
       <th scope="col">Problem Statement</th>
@@ -58,19 +59,20 @@
       $query="select * from gd where nid='$unid' order by gdid desc";
       $result=mysqli_query($conn,$query);  
       while($rows=mysqli_fetch_assoc($result)){
-  ?> 
+        ?> 
 
-  <tbody style="background-color: white; color: black;">
-      <tr>
-        <td class="cgdid"><?php echo $rows['gdid']; ?></td>
-        <td class="ctype"><?php echo $rows['type']; ?></td>     
-        <td class="cloc"><?php echo $rows['location of crime']; ?></td>          
-        <td class="cproblem"><?php echo $rows['problem statement']; ?></td>          
-      </tr>
-    </tbody>
+        <tbody style="background-color: white; color: black;">
+            <tr>
+              <td class="cgdid"><?php echo $rows['gdid']; ?></td>
+              <td class="cstatus"><?php echo $rows['status']; ?></td>
+              <td class="ctype"><?php echo $rows['type']; ?></td>     
+              <td class="cloc"><?php echo $rows['location of crime']; ?></td>          
+              <td class="cproblem"><?php echo $rows['problem statement']; ?></td>          
+            </tr>
+          </tbody>
 
-  <?php
-    } 
+        <?php
+      } 
   ?>
 </table>
 </div>
