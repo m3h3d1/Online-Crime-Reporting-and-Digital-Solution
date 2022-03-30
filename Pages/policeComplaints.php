@@ -48,6 +48,7 @@
   <thead>
     <tr>
       <th scope="col">GD ID</th>
+      <th scope="col">Status</th>
       <th scope="col">NID</th>
       <th scope="col">Type</th>
       <th scope="col">Name</th>
@@ -57,7 +58,8 @@
     </tr>
   </thead>
   <?php
-      $query="select * from gd order by gdid desc limit 10000";
+      $pid = $_SESSION['pid'];
+      $query="select * from gd where pid = '$pid' order by gdid desc limit 10000";
       $result=mysqli_query($conn,$query);  
       while($rows=mysqli_fetch_assoc($result)){
   ?> 
@@ -65,6 +67,7 @@
   <tbody style="background-color: white; color: black;">
       <tr>
         <td class="five"><?php echo $rows['gdid']; ?></td>
+        <td class="status"><?php echo $rows['status']; ?></td>
         <td class="five"><?php echo $rows['nid']; ?></td>     
         <td class="ten"><?php echo $rows['type']; ?></td>          
         <td class="ten"><?php echo $rows['name']; ?></td>          

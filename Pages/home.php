@@ -49,8 +49,8 @@
                         }
                         elseif(isset($_SESSION['pid'])) {
                           echo '<h1>Welcome!</h1>
-                          <a href="message.php"><button type="button" class="btn btn-outline-success">User Messages</button></a>
-                          <a href="policeComplaints.php"><button type="button" class="btn btn-outline-secondary">User Complaints</button></a>';
+                          <a href="policeComplaints.php"><button type="button" class="btn btn-outline-success">User Complaints</button></a>';
+                          // <a href="policeCompletedComplaints.php"><button type="button" class="btn btn-outline-secondary">Completed Complaints.php</button></a>';
                         }
                         else {
                             echo '
