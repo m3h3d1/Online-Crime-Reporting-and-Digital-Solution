@@ -1,4 +1,6 @@
 <?php
+ 
+
   session_start();
   if(!isset($_SESSION['nid']))
     header("location:login.php");
@@ -9,6 +11,12 @@
   $result=mysqli_query($conn,"SELECT * FROM user where nid='$unid' ");
   $q=mysqli_fetch_assoc($result);
   $uname = $q['name'];
+
+ require_once("C:/xampp/htdocs/Online-Crime-Reporting-and-Digital-Solution/php/dbcontroller.php");
+ $db_handle = new DBController();
+ $query = "SELECT * FROM district";
+ $results = $db_handle->runQuery($query);
+ 
 ?>
 
 
@@ -29,7 +37,24 @@
     
 
     <title>Submit your complaint</title>
+
+   
 </head>
+
+<script src="Js/jquery-3.6.0.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+    function getThana(val){
+        $.ajax({
+            type: "POST",
+            url: "getThana.php",
+            data: 'district_id='+val,
+            success:function(data){
+                $("#thana-list").html(data);
+            }
+        });
+    }
+</script>
 <body>
 
     <div class="container-fluid">
@@ -69,13 +94,29 @@
             </div>
 
             <div class="col-4">
-                <label for="thana" class="form-label">Select Thana</label>
-                    <select id="thana" class="form-select" name="thana">
+
+                <div class="row">
+                    <label for="district" class="form-label">Select District</label><br>
+                    <select name = "district" id="district-list" class="form-select" onChange="getThana(this.value);">
                       <option selected disabled>Choose...</option>
-                      <option>Dhaka</option>
-                      <option>Chittagong</option>
-                      <option>Other</option>
+
+                      <?php
+                      foreach ($results as $district) {
+                         ?>
+                         <option value="<?php echo $district["district_id"]; ?>"><?php echo $district["district_name"]; ?></option>
+                         <?php
+                      }
+                      ?>
                     </select>
+                </div>
+                <br>
+                <div class="row">
+                    <label for="thana" class="form-label">Select Thana</label><br>
+                    <select name = "thana" id="thana-list" class="form-select">
+                      <option selected disabled>Choose...</option>
+                    </select>
+                </div>
+                    
             </div>
 
             <div class="col-12">
