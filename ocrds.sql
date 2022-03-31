@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 30, 2022 at 08:41 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.0
+-- Generation Time: Mar 31, 2022 at 07:01 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -101,10 +101,33 @@ CREATE TABLE `gd` (
 
 INSERT INTO `gd` (`gdid`, `nid`, `type`, `name`, `location of crime`, `thana name`, `problem statement`, `photo`, `status`, `pid`) VALUES
 (1, 0, 'Emergency', '', 'jhgjjhgj', 'Dhaka', 'jhgjgjh', '', '', 1),
-(2, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff jasdhas askjdhaks kaksjdha akjsd aksjdha kaksjd akjsdh aksjdb akjsdh kajsdhk ahsdhkjash baosdhkasjh aojsdkajshkdjhkahdkjahsk kjasdh.', '', '', 0),
-(3, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '', '', 0),
+(2, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Banani', 'fffffffffffffff jasdhas askjdhaks kaksjdha akjsd aksjdha kaksjd akjsdh aksjdb akjsdh kajsdhk ahsdhkjash baosdhkasjh aojsdkajshkdjhkahdkjahsk kjasdh.', '', 'Completed', 1),
+(3, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Banani', 'fffffffffffffff', '', 'queue', -1),
 (4, 12345679, 'Emergency', 'ABCDEF', 'jhjghgjhj', 'Chittagong', 'fffffffffffffff', '', '', 0),
 (5, 12345679, 'Choose...', 'ABCDEF', 'aaaa', 'Chittagong', 'aaa', '', 'queue', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `incharge`
+--
+
+CREATE TABLE `incharge` (
+  `id` int(11) NOT NULL,
+  `name` varchar(40) NOT NULL,
+  `email` varchar(40) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `gender` varchar(10) NOT NULL,
+  `mobile` varchar(20) NOT NULL,
+  `tid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `incharge`
+--
+
+INSERT INTO `incharge` (`id`, `name`, `email`, `password`, `gender`, `mobile`, `tid`) VALUES
+(1, 'Ahana', 'ahana@gmail.com', '1234', 'Female', '01234567890', 1);
 
 -- --------------------------------------------------------
 
@@ -144,15 +167,17 @@ CREATE TABLE `police` (
   `email` varchar(40) NOT NULL,
   `password` varchar(30) NOT NULL,
   `gender` varchar(10) NOT NULL,
-  `mobile` varchar(15) NOT NULL
+  `mobile` varchar(15) NOT NULL,
+  `tid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `police`
 --
 
-INSERT INTO `police` (`pid`, `name`, `email`, `password`, `gender`, `mobile`) VALUES
-(1, 'Mansur', 'mansur@gmail.com', '1234', 'Male', '01234567890');
+INSERT INTO `police` (`pid`, `name`, `email`, `password`, `gender`, `mobile`, `tid`) VALUES
+(1, 'Mansur', 'mansur@gmail.com', '1234', 'Male', '01234567890', 1),
+(2, 'Rafi', 'rafi@gmail.com', '1234', 'Male', '01234567899', 1);
 
 -- --------------------------------------------------------
 
@@ -229,6 +254,12 @@ ALTER TABLE `gd`
   ADD PRIMARY KEY (`gdid`);
 
 --
+-- Indexes for table `incharge`
+--
+ALTER TABLE `incharge`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `message`
 --
 ALTER TABLE `message`
@@ -281,6 +312,12 @@ ALTER TABLE `gd`
   MODIFY `gdid` int(9) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
+-- AUTO_INCREMENT for table `incharge`
+--
+ALTER TABLE `incharge`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
@@ -290,7 +327,7 @@ ALTER TABLE `message`
 -- AUTO_INCREMENT for table `police`
 --
 ALTER TABLE `police`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `thana`
