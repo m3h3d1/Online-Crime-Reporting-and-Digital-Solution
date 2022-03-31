@@ -11,9 +11,10 @@
         $thana=$_POST['thana'];
         $problem=$_POST['problem'];
         $status = 'queue';
+        $pid = -1;
         // photo
 
-        $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`, `status`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem', '$status')";
+        $sql="INSERT INTO gd(`nid`,`type`,`name`,`location of crime`,`thana name`, `problem statement`, `status`, `pid`) VALUES ('$nid','$gdtype','$name','$location','$thana','$problem', '$status', '$pid')";
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
             echo '<script type="text/javascript">

@@ -15,6 +15,7 @@
       $_SESSION['iname']=$row['name'];    
       $_SESSION['iemail'] = $row['email'];
       $_SESSION['iid'] = $row['id'];
+      $_SESSION['tid'] = $row['tid'];
     //   echo "success";
       header('location:home.php');
     }

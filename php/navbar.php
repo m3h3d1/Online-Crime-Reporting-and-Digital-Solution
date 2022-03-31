@@ -35,29 +35,32 @@
                   <li class="nav-item dropdown">
                     <?php
                       if(isset($_SESSION['nid'])) {
-                        echo '<p style="color: white;"> Welcome <code>'.$_SESSION["name"].'</code></p>'; 
+                        echo '<p class="nav-link" style="color: white;"> Welcome <code>'.$_SESSION["name"].'</code></p>'; 
 
                         echo '<li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
-
+                          <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>
+                          </li>';
                         }
                         elseif(isset($_SESSION['aid'])) {
-                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["aname"].' </code></p>';
+                          echo '<p class="nav-link" style="color: white;"> Welcome <code> '.$_SESSION["aname"].' </code></p>';
 
                           echo '<li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
                         }
                         elseif(isset($_SESSION['pid'])) {
-                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["pname"].' </code></p>';
+                          echo '<p class="nav-link" style="color: white;"> Welcome <code> '.$_SESSION["pname"].' </code></p>';
 
                           echo '<li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
                         }
                         elseif(isset($_SESSION['iid'])) {
-                          echo '<p style="color: white;"> Welcome <code> '.$_SESSION["iname"].' </code></p>';
+                          echo '<li class="nav-item">
+                            <p class="nav-link" style="color: white;"> Welcome <code> '.$_SESSION["iname"].' </code></p>
+                          </li>';
 
                           echo '<li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>';
+                            <a class="nav-link active" aria-current="page" href="../php/logout_session.php">Logout</a>
+                            </li>';
                         }
                         else {
                         // echo "<p style=\"color:white;\">Please login first .</p>";

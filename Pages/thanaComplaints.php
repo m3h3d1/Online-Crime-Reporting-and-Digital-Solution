@@ -1,10 +1,12 @@
--<?php 
+<?php 
   session_start();
-  if(!isset($_SESSION['nid'])) {
+  if(!isset($_SESSION['iid'])) {
     header('home.php');
   }
   include "../php/db.php";
   // $aid = $_SESSION['aid'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,45 +41,81 @@
     <!-- navbar ends --> 
 </div>
 
+<?php
+      $iid = $_SESSION['iid'];
+      $query="SELECT gd.gdid, gd.status, gd.nid, gd.type, gd.name as uname, gd.`location of crime`, gd.`thana name` as gdthana, gd.`problem statement`, gd.pid FROM `incharge` join `thana` on incharge.tid = thana.tid 
+      join `gd` on thana.thana_name = gd.`thana name` 
+    --   join `police` on police.pid=gd.pid
+      where incharge.id = '$iid' order by gdid desc limit 10000";
+      $result=mysqli_query($conn,$query);  
+      $rows=mysqli_fetch_assoc($result);
+?> 
 
 <div>
   <br>
-<h2> User Complaints</h2>
+
+<h2> User Complaints in <b><?php echo  $rows['gdthana']?></b> Thana </h2>
 
 <table id="t">
   <thead>
     <tr>
       <th scope="col">GD ID</th>
       <th scope="col">Status</th>
+      <th scope="col">Police </th>
       <th scope="col">NID</th>
       <th scope="col">Type</th>
       <th scope="col">Name</th>
       <th scope="col">Location of Crime</th>
       <th scope="col">Thana</th>
       <th scope="col">Problem Statement</th>
+      
     </tr>
   </thead>
   <?php
-      $pid = $_SESSION['pid'];
-      $query="select * from gd where pid = '$pid' order by gdid desc limit 10000";
-      $result=mysqli_query($conn,$query);  
-      while($rows=mysqli_fetch_assoc($result)){
+      while($rows){
   ?> 
 
   <tbody style="background-color: white; color: black;">
       <tr>
         <td class="five"><?php echo $rows['gdid']; ?></td>
         <td class="status"><?php echo $rows['status']; ?></td>
+        <td class="twenty"><?php 
+            if($rows['pid']!='-1') echo $rows['pid']; 
+            else {
+                // echo "Not Assigned <br>";
+                echo'
+                <form method="post" action="../php/thanaUpdatePolice.php" >
+                    <label for="policeid" class="form-label">Not Assigned</label>
+                        <select id="policeid" class="form-select" name="policeid">';
+                            $tid = $_SESSION['tid'];
+                            echo $tid;
+                            echo "111";   
+                            $query2="select * from police where tid='$tid'";
+                            $result2=mysqli_query($conn,$query2);  
+                            while($rows2=mysqli_fetch_assoc($result2)){
+                                echo '<option value='.$rows2[pid].'>'.$rows2[pid].'</option>';
+                            }
+                            $_SESSION['gdid']=$rows['gdid'];
+                        echo '</select>
+                        <input type="submit" name="submit" value="Set Police" />
+                    </label>
+                </form>';
+            }
+        ?> <br> 
+            
+        </td>   
         <td class="five"><?php echo $rows['nid']; ?></td>     
         <td class="ten"><?php echo $rows['type']; ?></td>          
-        <td class="ten"><?php echo $rows['name']; ?></td>          
+        <td class="ten"><?php echo $rows['uname']; ?></td>          
         <td class="twenty"><?php echo $rows['location of crime']; ?></td>          
-        <td class="ten"><?php echo $rows['thana name']; ?></td>          
-        <td class="cproblem"><?php echo $rows['problem statement']; ?></td>          
+        <td class="ten"><?php echo $rows['gdthana']; ?></td>          
+        <td class="cproblem"><?php echo $rows['problem statement']; ?></td>         
+         
       </tr>
     </tbody>
 
   <?php
+    $rows=mysqli_fetch_assoc($result);
     } 
   ?>
 </table>

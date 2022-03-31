@@ -48,6 +48,7 @@
   <thead>
     <tr>
       <th scope="col">GD ID</th>
+      <th scope="col">Status</th>
       <th scope="col">NID</th>
       <th scope="col">Type</th>
       <th scope="col">Name</th>
@@ -65,6 +66,7 @@
   <tbody style="background-color: white; color: black;">
       <tr>
         <td class="five"><?php echo $rows['gdid']; ?></td>
+        <td class="status"><?php echo $rows['status']; ?></td>
         <td class="five"><?php echo $rows['nid']; ?></td>     
         <td class="ten"><?php echo $rows['type']; ?></td>          
         <td class="ten"><?php echo $rows['name']; ?></td>          

@@ -60,7 +60,7 @@
                     <div class="caption">
                         <h3>HQ Login</h3>
                         <p>
-                            <a href="headlogin.php" class="btn btn-primary">HQ Login</a>
+                            <a href="hqLogin.php" class="btn btn-primary">HQ Login</a>
                         </p>
                     </div>
                 </div>
