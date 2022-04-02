@@ -27,6 +27,22 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <title>Document</title>
 
+    <style>
+      body {
+    background-image: url(../Images/lg.jpg);
+    
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+  
+    text-align: center;
+}
+.table1 {
+            box-shadow: 0px 0px 20px #000;
+            -webkit-box-shadow: 0px 0px 20px #000;
+            -moz-box-shadow: 0px 0px 20px #000;
+        }
+      </style>
     <link href="../css/historytable.css" rel="stylesheet">
 </head>
 
@@ -44,7 +60,7 @@
   <br>
 <h2> User Complaints</h2>
 
-<table id="t">
+<table id="t" class="table1">
   <thead>
     <tr>
       <th scope="col">GD ID</th>
