@@ -25,6 +25,8 @@
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
           $_SESSION['name'] = $name;
+          $_SESSION['email'] = $email;
+          $_SESSION['nid'] = $nid;
           echo 'Data inserted';
           header('location:../index.php');
         }
