@@ -14,8 +14,8 @@
 	
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
-    
 
+    
     <title>Online GD</title>
 </head>
 <body>
@@ -27,57 +27,6 @@
         include "../php/navbar.php";
     ?>
     <!-- navbar ends -->
-
-
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="content">
-                  
-                  <hr>
-                    <?php 
-                        if(isset($_SESSION['nid'])) {
-                            echo '<h1>Welcome!</h1>
-                            <h3>User Dashboard!</h3>
-                            <a href="complaint.php"><button type="button" class="btn btn-outline-success">Submit a complaint</button></a>
-                            <a href="history.php"><button type="button" class="btn btn-outline-secondary">Check history</button></a>';
-                    
-                        }
-                        elseif(isset($_SESSION['aid'])) {
-                            echo '<h1>Welcome!</h1>
-                            <h3>HQ Dashboard!</h3>
-                            <a href="message.php"><button type="button" class="btn btn-outline-success">User Messages</button></a>
-                            <a href="allcomplains.php"><button type="button" class="btn btn-outline-secondary">User Complaints</button></a>';
-                        }
-                        elseif(isset($_SESSION['pid'])) {
-                          echo '<h1>Welcome!</h1>
-                          <h3>Police Dashboard!</h3>
-                          <a href="policeComplaints.php"><button type="button" class="btn btn-outline-success">User Complaints</button></a>';
-                          // <a href="policeCompletedComplaints.php"><button type="button" class="btn btn-outline-secondary">Completed Complaints.php</button></a>';
-                        }
-                        elseif(isset($_SESSION['iid'])) {
-                          echo '<h1>Welcome!</h1>
-                          <h3>Incharge Dashboard!</h3>
-                          <a href="thanaComplaints.php"><button type="button" class="btn btn-outline-success">User Complaints</button></a>';
-                          // <a href="policeCompletedComplaints.php"><button type="button" class="btn btn-outline-secondary">Completed Complaints.php</button></a>';
-                        }
-                        else {
-                            echo '
-                            <h1>Have a Complaint?</h1>
-                            <h3>Register Below &nbsp &nbsp<i class="fa fa-hand-o-down" aria-hidden="true"></i></h3>
-                            <a href="registration.php" aria-pressed="true">
-                            <button type="button" class="btn btn-secondary">Sign up!</button>
-                            </a>';
-                        }
-                    ?>
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-    </div>
-
 
 
 

@@ -89,7 +89,7 @@
             </div>
 
             <div class="col-8">
-                <label for="loc" class="form-label">Location of crime</label>
+                <label for="loc" class="form-label">Location of Crime</label>
                 <input type="text" class="form-control" id="loc" name="location">
             </div>
 
@@ -132,7 +132,9 @@
             <div class="col-12">
                 
                 <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="agree" name="c">
+
+                <input class="form-check-input" type="checkbox" id="agree" required>
+                 
                 <label class="form-check-label" for="agree">
                     The information I provided is true
                 </label>
