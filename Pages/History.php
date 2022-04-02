@@ -29,13 +29,18 @@
     <link href="../css/historytable.css" rel="stylesheet">
     <style>
       body {
-    background-image: url(../Images/cyber.jpg);
+    background-image: url(../Images/lg.jpg);
     background-size: cover;
     width: 100vw;
     height: auto;
   
     text-align: center;
 }
+.table1 {
+            box-shadow: 0px 0px 20px #000;
+            -webkit-box-shadow: 0px 0px 20px #000;
+            -moz-box-shadow: 0px 0px 20px #000;
+        }
       </style>
 </head>
 
@@ -54,7 +59,7 @@
   <br><br>
 <h2 class="text-dark" style="font-weight:bold" > User Complain History</h2>
 
-<table id="t">
+<table id="t" class="table1">
   <thead style="background-color:  #2c2c54 ; color: white;">
     <tr>
       <th scope="col">Complaint ID</th>
@@ -70,7 +75,7 @@
       while($rows=mysqli_fetch_assoc($result)){
         ?> 
 
-        <tbody style="background-color:#7ed6df; color: black; font-weight:bold">
+        <tbody style="background-color:azure; color: black; font-weight:bold">
             <tr>
               <td class="cgdid"><?php echo $rows['gdid']; ?></td>
               <td class="cstatus"><?php echo $rows['status']; ?></td>

@@ -28,6 +28,22 @@
     <title>Document</title>
 
     <link href="../css/historytable.css" rel="stylesheet">
+    <style>
+      body {
+    background-image: url(../Images/kb2.jpg);
+    
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+  
+    text-align: center;
+}
+.table1 {
+            box-shadow: 0px 0px 20px #000;
+            -webkit-box-shadow: 0px 0px 20px #000;
+            -moz-box-shadow: 0px 0px 20px #000;
+        }
+      </style>
 </head>
 
 <body>
@@ -44,8 +60,8 @@
   <br>
 <h2> User Messages</h2>
 
-<table id="t">
-  <thead>
+<table id="t" class="table1">
+  <thead style="color:black; background-color:#84817a;">
     <tr>
       <th scope="col">Message ID</th>
       <th scope="col">User's Name</th>
@@ -59,7 +75,7 @@
       while($rows=mysqli_fetch_assoc($result)){
   ?> 
 
-  <tbody style="background-color: white; color: black;">
+  <tbody style=" color: black; background-color:#f1f2f6">
       <tr>
         <td class="cgdid"><?php echo $rows['mid']; ?></td>
         <td class="ctype"><?php echo $rows['name']; ?></td>     

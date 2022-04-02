@@ -28,6 +28,22 @@
     <title>Document</title>
 
     <link href="../css/historytable.css" rel="stylesheet">
+    <style>
+      body {
+    background-image: url(../Images/lg.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+  
+    text-align: center;
+}
+.table1 {
+            box-shadow: 0px 0px 20px #000;
+            -webkit-box-shadow: 0px 0px 20px #000;
+            -moz-box-shadow: 0px 0px 20px #000;
+            border-radius:10px;
+        }
+      </style>
 </head>
 
 <body>
@@ -44,7 +60,7 @@
   <br>
 <h2> User Complaints</h2>
 
-<table id="t">
+<table id="t" class="table1">
   <thead>
     <tr>
       <th scope="col">GD ID</th>
@@ -63,7 +79,7 @@
       while($rows=mysqli_fetch_assoc($result)){
   ?> 
 
-  <tbody style="background-color: white; color: black;">
+  <tbody style="background-color: #dcdde1; color: black;">
       <tr>
         <td class="five"><?php echo $rows['gdid']; ?></td>
         <td class="status"><?php echo $rows['status']; ?></td>

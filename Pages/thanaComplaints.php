@@ -30,6 +30,22 @@
     <title>Document</title>
 
     <link href="../css/historytable.css" rel="stylesheet">
+    <style>
+      body {
+    background-image: url(../Images/map1.jpg);
+    
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+  
+    text-align: center;
+}
+.table1 {
+            box-shadow: 0px 0px 20px #000;
+            -webkit-box-shadow: 0px 0px 20px #000;
+            -moz-box-shadow: 0px 0px 20px #000;
+        }
+      </style>
 </head>
 
 <body>
@@ -56,7 +72,7 @@
 
 <h2> User Complaints in <b><?php echo  $rows['gdthana']?></b> Thana </h2>
 
-<table id="t">
+<table id="t" class="table1">
   <thead>
     <tr>
       <th scope="col">GD ID</th>
