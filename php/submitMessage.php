@@ -8,7 +8,12 @@
         $name=$_POST['name'];
         $email=$_POST['email'];
         $message=$_POST['message'];
-
+        $messagelength= strlen($message);
+        
+            if ($messagelength < 6)
+            {
+            $output= "<br><redtext> Invalid username. Username must be at least 6 characters</redtext>";
+            }
         $sql="INSERT INTO message(`name`,`email`,`message`) VALUES ('$name','$email','$message')";
         $insertion= mysqli_query($conn,$sql);
         if($insertion) {
