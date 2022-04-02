@@ -83,7 +83,26 @@
   <tbody style="background-color: white; color: black;">
       <tr>
         <td class="five"><?php echo $rows['gdid']; ?></td>
-        <td class="status"><?php echo $rows['status']; ?></td>
+        <td class="status">
+          <?php //echo $rows['status']; ?>
+          <?php
+            echo'
+            <form method="post" action="../php/complaintStatusUpdate.php" >
+                <!-- <label for="policeid" class="form-label">Not Assigned</label> -->
+                    <select id="status" class="form-select" name="status">';
+                        $tid = $_SESSION['tid'];
+                        echo $tid;
+                        echo '<option value='.$rows["status"].'>'.$rows["status"].'</option>';
+                        if($rows["status"] != "Queue") echo '<option value="Queue">Queue</option>';
+                        if($rows["status"] != "Processing") echo '<option value="Processing">Processing</option>';
+                        if($rows["status"] != "Completed") echo '<option value="Completed">Completed</option>';
+                        $_SESSION['gdid'] = $rows['gdid'];
+                    echo '</select>
+                    <input type="submit" name="submit" value="Update Status" />
+                </label>
+            </form>';
+          ?>
+        </td>
         <td class="five"><?php echo $rows['nid']; ?></td>     
         <td class="ten"><?php echo $rows['type']; ?></td>          
         <td class="ten"><?php echo $rows['name']; ?></td>          

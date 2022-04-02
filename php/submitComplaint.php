@@ -10,7 +10,7 @@
         $location=$_POST['location'];
         $thana=$_POST['thana'];
         $problem=$_POST['problem'];
-        $status = 'queue';
+        $status = 'Queue';
         $pid = -1;
         // photo
 
