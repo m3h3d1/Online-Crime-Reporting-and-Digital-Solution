@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/faq.css">
+
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
@@ -53,43 +55,111 @@
 </head>
 
 <body>
-
-<!-- navigation starts -->
 <div class="container-fluid">
 <?php
         include "../php/navbar.php";
     ?>
 </div>
+<!-- navigation starts -->
+<div class="container-fluid box">
 
+        <section>
+            <h1 class="title text-center">FAQ's</h1>
+            <div class="row">
+                <div class="col-6">
+                    <div class="questions-container" style="background-color:#A9F1DF;">
 
-<div class="col-md-12 c-head">
-            <h1>FAQ</h1>
-            <!-- <h2>Know More</h2> -->
-  <div class="faq">
-    <div class="card">
-      <div class="card-body">
-    
-      <h5>১। অনলাইনে অভিযোগ জানাতে কি কি প্রয়োজন?</h5> 
-      <p>উত্তরঃ আপনার জাতীয় পরিচয়পত্র নম্বর অথবা জন্মসনদপত্র নম্বর অথবা পাসপোর্ট নম্বর, আপনার সচল মোবাইল, আপনার লাইভ ছবি।</p> 
+                        <div class="question">
+                            <button>
+                        <span>১। অনলাইনে অভিযোগ জানাতে কি কি প্রয়োজন?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
+                            <p>উত্তরঃ আপনার জাতীয় পরিচয়পত্র নম্বর অথবা জন্মসনদপত্র নম্বর অথবা পাসপোর্ট নম্বর, আপনার সচল মোবাইল, আপনার লাইভ ছবি।</p>
+                        </div>
 
-      <h5>২। অনলাইনে অভিযোগ কপি কি আমি পেতে পারব?</h5> 
+                        <div class="question">
+                            <button>
+                        <span>২। অনলাইনে অভিযোগ কপি কি আমি পেতে পারব?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
       <p>উত্তরঃ হ্যাঁ, আপনি অভিযোগ জানানোর পরে অভিযোগ পত্র ডাউনলোড করতে পারবেন।</p> 
+                        </div>
 
-      <h5>৩। অনলাইনে অভিযোগ জানাতে প্রথমে কি করনীয়?</h5> 
+                        <div class="question">
+                            <button>
+                        <span>৩। অনলাইনে অভিযোগ জানাতে প্রথমে কি করনীয়?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
       <p>উত্তরঃ প্রথমে আপনাকে একাউন্টে লগইন করতে হবে। একাউন্ট না থাকলে আগে রেজিস্ট্রেশন করে নিতে হবে।</p> 
+                        </div>
 
-      <h5>৪। অভিযোগ জানানোর পরবর্তী পদক্ষেপ কি?</h5> 
+                        <div class="question">
+                            <button>
+                        <span>৪। অভিযোগ জানানোর পরবর্তী পদক্ষেপ কি?</span>
+                        <i class="fas fa-chevron-down d-arrow"></i>
+                    </button>
       <p>উত্তরঃ সংশ্লিষ্ট থানা থেকে আপনার সাথে যোগাযোগ করা হবে।</p> 
+                        </div>
+                    </div>
 
-      <h5>৫। অনলাইনে অভিযোগ জানাতে কারা রেজিস্ট্রেশন করতে পারবে?</h5> 
+                </div>
+                <div class="col-6">
+                    <div class="questions-container " style="background-color: #A9F1DF;">
+
+                        <div class="question ">
+                            <button>
+                        <span>৫। অনলাইনে অভিযোগ জানাতে কারা রেজিস্ট্রেশন করতে পারবে?</span>
+                        <i class="fas fa-chevron-down d-arrow "></i>
+                    </button>
       <p>উত্তরঃ বাংলাদেশের যেকোনো নাগরিক অনলাইনে অভিযোগ জানাতে পারবেন।</p> 
+                        </div>
 
-      </div>
-    </div> 
-    </div>   
-</div>
-<div class="clr"></div>
-            
+                        <div class="question ">
+                            <button>
+                        <span>৬। সমস্যার সমাধান হতে কতদিন লাগতে পারে?
+                            </span>
+                        <i class="fas fa-chevron-down d-arrow "></i>
+                    </button>
+                            <p>উত্তরঃ আপনার সমস্যার দ্রুত সমাধানের সর্বাত্মক চেষ্টা করা হবে</p>
+                        </div>
+                        <div class="question ">
+                            <button>
+                        <span>
+                            ৭।এক্ষেত্রে বাদীর কোনোরকম সমস্যা হতে পারে কি?</span>
+                        <i class="fas fa-chevron-down d-arrow "></i>
+                    </button>
+                            <p>উত্তরঃ মামলা চলা পর্যন্ত বাদীকে সময়ের প্রয়োজনে উপস্থিত থাকতে হতে পারে
+                            </p>
+                        </div>
+
+                        <div class="question ">
+                            <button>
+                            <span>৮।জাতীয় পরিচয়পত্র না থাকলে করণীয়?</span>
+                            <i class="fas fa-chevron-down d-arrow "></i>
+                        </button>
+                            <p>উত্তরঃ জন্মসনদপত্র ব্যবহার করতে পারবেন।</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <p class="Query"><b>For any Queries,Please contact here.</b><a href="contact.php"><button type="button" class="btn btn-dark">Contact <i class="fas fa-arrow-alt-circle-right"></i></button></a></p>
+
+        </section>
+
+        <!-- external js-->
+        <script src="../js/FAQ.js "></script>
+
+    </div>
+</body>
+<script src="../js/jquery-3.5.1.js "></script>
+<script src="../js/bootstrap.bundle.min.js "></script>
+<script src="https://kit.fontawesome.com/a076d05399.js "></script>
+<script src="../js/wow.js "></script>
+<script>
+    new WOW.init();
+</script>
 
  <!-- Footer -->
  <?php

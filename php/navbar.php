@@ -69,7 +69,6 @@
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <li><a class="dropdown-item" href="../Pages/login.php">User</a></li>
-                          <li><a class="dropdown-item" href="../Pages/official_login.php">Admin</a></li>
                           <li><a class="dropdown-item" href="../Pages/officialPage.php">Official</a></li>
                         </ul>';
                       }
