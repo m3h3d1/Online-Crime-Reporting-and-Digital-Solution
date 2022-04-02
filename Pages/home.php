@@ -47,7 +47,9 @@
                             echo '<h1>Welcome!</h1>
                             <h3>HQ Dashboard!</h3>
                             <a href="message.php"><button type="button" class="btn btn-outline-success">User Messages</button></a>
-                            <a href="allcomplains.php"><button type="button" class="btn btn-outline-secondary">User Complaints</button></a>';
+                            <a href="allcomplains.php"><button type="button" class="btn btn-outline-secondary">User Complaints</button></a>
+                            <a href="add police.php"><button type="button" class="btn btn-outline-success">Add Police</button></a>
+                            <a href="add incharge.php"><button type="button" class="btn btn-outline-success">Add Incharge</button></a>';
                         }
                         elseif(isset($_SESSION['pid'])) {
                           echo '<h1>Welcome!</h1>
