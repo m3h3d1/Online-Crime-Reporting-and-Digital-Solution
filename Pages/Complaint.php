@@ -130,8 +130,11 @@
             </div> -->
 
             <div class="col-12">
+                
                 <div class="form-check">
+
                 <input class="form-check-input" type="checkbox" id="agree" required>
+                 
                 <label class="form-check-label" for="agree">
                     The information I provided is true
                 </label>
@@ -143,6 +146,8 @@
                 </button>
             </div>
             </form>
+           
+
       </div>
 
     </div>
