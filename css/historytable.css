@@ -1,54 +1,63 @@
-body {
-    padding: 14px;
-    text-align: center;
-  }
-  
-  table {
+table {
     width: 100%;
     margin: 20px auto;
     table-layout: auto;
-  }
-  
-  .fixed {
+}
+
+body {
+    background-image: url(../Images/bg.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+    text-align: center;
+}
+
+.fixed {
     table-layout: fixed;
-  }
-  
-  table,
-  td,
-  th {
+}
+
+table,
+td,
+th {
     border-collapse: collapse;
-  }
-  
-  th,
-  td {
+}
+
+th,
+td {
     padding: 10px;
     border: solid 1px;
     text-align: center;
-  }
-  
-    .cgdid {
-        width: 10%;
-    }
-    .c {
-      width: 10%;
-    }
-    .ctype {
-        width: 20%;
-    }
-    .cloc {
-        width: 30%;
-    }
-    .cproblem {
+}
+
+.cgdid {
+    width: 10%;
+}
+
+.c {
+    width: 10%;
+}
+
+.ctype {
+    width: 20%;
+}
+
+.cloc {
+    width: 30%;
+}
+
+.cproblem {
     /* width: 350px; */
-        width: 40%;
-    }
-    .five {
-      width: 5%;
-    }
-    .ten {
-      width: 10%;
-    
-    }
-    .twenty {
-      width: 10%;
-    }
+    width: 40%;
+}
+
+.five {
+    width: 5%;
+}
+
+.ten {
+    width: 10%;
+}
+
+.twenty {
+    width: 10%;
+}

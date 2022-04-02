@@ -1,3 +1,8 @@
+<style>
+  .dmenu{margin-left:-10px;
+ 
+margin-right:-20px}
+  </style>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark dmenu">
             <div class="container-fluid dmenudiv">
               <!-- <a class="navbar-brand" href="https://www.police.gov.bd/"> -->

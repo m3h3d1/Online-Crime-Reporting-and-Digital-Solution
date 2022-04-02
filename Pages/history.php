@@ -19,14 +19,24 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/responsive.css">
 
-  <link rel="stylesheet" type="text/css" href="../css/login_style.css">
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>  
   <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'> 
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <title>Document</title>
+    <title>History</title>
     <link href="../css/historytable.css" rel="stylesheet">
+    <style>
+      body {
+    background-image: url(../Images/cyber.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: auto;
+  
+    text-align: center;
+}
+      </style>
 </head>
 
 <body>
@@ -41,11 +51,11 @@
 
 
 <div>
-  <br>
-<h2> User Complain History</h2>
+  <br><br>
+<h2 class="text-dark" style="font-weight:bold" > User Complain History</h2>
 
 <table id="t">
-  <thead>
+  <thead style="background-color:  #2c2c54 ; color: white;">
     <tr>
       <th scope="col">Complaint ID</th>
       <th scope="col">Status</th>
@@ -60,7 +70,7 @@
       while($rows=mysqli_fetch_assoc($result)){
         ?> 
 
-        <tbody style="background-color: white; color: black;">
+        <tbody style="background-color:#7ed6df; color: black; font-weight:bold">
             <tr>
               <td class="cgdid"><?php echo $rows['gdid']; ?></td>
               <td class="cstatus"><?php echo $rows['status']; ?></td>
