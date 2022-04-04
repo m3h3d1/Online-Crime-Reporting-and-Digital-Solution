@@ -77,7 +77,7 @@
     <tr>
       <th scope="col">GD ID</th>
       <th scope="col">Status</th>
-      <th scope="col">Police </th>
+      <th scope="col">Assigned Police </th>
       <th scope="col">NID</th>
       <th scope="col">Type</th>
       <th scope="col">Name</th>
@@ -96,20 +96,27 @@
         <td class="five"><?php echo $rows['gdid']; ?></td>
         <td class="status"><?php echo $rows['status']; ?></td>
         <td class="twenty"><?php 
-            if($rows['pid']!='-1') echo $rows['pid']; 
+            if($rows['pid']!='-1') { // police assign kore na dewa thakle
+              $pid = $rows['pid'];
+              $tid = $_SESSION['tid'];
+              $query2="select * from police where tid='$tid' and pid='$pid'"; // query kore police er id, name ber kora hobe tid & pid use kore
+              $result2=mysqli_query($conn,$query2);  
+              $rows2=mysqli_fetch_assoc($result2);
+              echo $rows2['pid'].' - '.$rows2['name'];
+            }
             else {
                 // echo "Not Assigned <br>";
                 echo'
                 <form method="post" action="../php/thanaUpdatePolice.php" >
-                    <label for="policeid" class="form-label">Not Assigned</label>
+                    <label for="policeid" class="form-label" style="color:Red";>Not Assigned</label>
                         <select id="policeid" class="form-select" name="policeid">';
                             $tid = $_SESSION['tid'];
-                            echo $tid;
-                            echo "111";   
+                            // echo $tid;
+                            // echo "111";   
                             $query2="select * from police where tid='$tid'";
                             $result2=mysqli_query($conn,$query2);  
                             while($rows2=mysqli_fetch_assoc($result2)){
-                                echo '<option value='.$rows2[pid].'>'.$rows2[pid].'</option>';
+                                echo '<option value='.$rows2[pid].'>'.$rows2[pid].' - '.$rows2[name].'</option>';
                             }
                             $_SESSION['gdid']=$rows['gdid'];
                         echo '</select>

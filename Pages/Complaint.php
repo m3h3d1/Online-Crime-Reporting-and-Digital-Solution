@@ -94,6 +94,7 @@
             </div>
 
             <div class="col-4">
+                <?php $dist="no"; ?>
 
                 <div class="row">
                     <label for="district" class="form-label">Select District</label><br>
@@ -102,6 +103,7 @@
 
                       <?php
                       foreach ($results as $district) {
+                          $dist = $district["district_name"];
                          ?>
                          <option value="<?php echo $district["district_id"]; ?>"><?php echo $district["district_name"]; ?></option>
                          <?php
@@ -114,6 +116,21 @@
                     <label for="thana" class="form-label">Select Thana</label><br>
                     <select name = "thana" id="thana-list" class="form-select">
                       <option selected disabled>Choose...</option>
+                      <?php 
+                        // if($dist == "Dhaka") {
+                            echo '
+                            <option>Banani</option>
+                            <option>Badda</option>
+                            <option>Mahakhali</option>
+                            <option>Mirpur</option>
+                            <option>Rampura</option>
+                            <option>Savar</option>';
+                        // }
+                        // else {
+                        //     echo '
+                        //     <option>Anwara</option>';
+                        // }
+                      ?>
                     </select>
                 </div>
                     
