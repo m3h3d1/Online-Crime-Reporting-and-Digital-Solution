@@ -1,30 +1,6 @@
 <?php 
   session_start();
-  $message="";
-  if(count($_POST)>0) {
-    include_once '../php/db.php';
-
-    $email=$_POST["email"];
-    $password=$_POST["password"];
-
-    $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
-    $res=mysqli_query($conn,$sqli);
-    $row = mysqli_fetch_array($res);
-    if(mysqli_num_rows($res)>0){
-      $_SESSION['name']=$row['name'];    
-      $_SESSION['email'] = $row['email'];
-      $_SESSION['nid'] = $row['nid'];
-      echo $_SESSION['name'];
-      header('location:../index.php');
-    }
-    else {
-      $message = "Invalid Username or Password!";
-    }
-    // echo $_SESSION['name'];
-  }
-  // if(isset($_SESSION["email"])) {
-  //   header("Location:index.php");
-  // }
+  
 ?>
 
 

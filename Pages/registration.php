@@ -105,12 +105,13 @@
 
             <input type="password" name="password" id="password" placeholder="set a password" />
             <input type="text" name="nid" placeholder="NID Number" />
-            <p style="color:white;">Gender</p>
+            
             <select class="form-control" name="gender">
+                <option selected disabled>Select Gender</option>
                 <option>Male</option>
                 <option>Female</option>
                 <option>Others</option>
-              </select> 
+              </select> <br>
             <input type="text" name="address" placeholder="Address" />
               <input type="text"  name="mobile" placeholder="Mobile"  required pattern="[0-9]{11}" minlength="7" maxlength="11" id="mobno"/>
               

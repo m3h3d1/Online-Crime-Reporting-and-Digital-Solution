@@ -14,7 +14,7 @@
 
  require_once("C:/xampp/htdocs/Online-Crime-Reporting-and-Digital-Solution/php/dbcontroller.php");
  $db_handle = new DBController();
- $query = "SELECT * FROM district";
+ $query = "SELECT * FROM thana";
  $results = $db_handle->runQuery($query);
  
 ?>
@@ -43,18 +43,7 @@
 
 <script src="Js/jquery-3.6.0.min.js" type="text/javascript"></script>
 
-<script type="text/javascript">
-    function getThana(val){
-        $.ajax({
-            type: "POST",
-            url: "getThana.php",
-            data: 'district_id='+val,
-            success:function(data){
-                $("#thana-list").html(data);
-            }
-        });
-    }
-</script>
+
 <body>
 
     <div class="container-fluid">
@@ -97,42 +86,22 @@
                 <?php $dist="no"; ?>
 
                 <div class="row">
-                    <label for="district" class="form-label">Select District</label><br>
-                    <select name = "district" id="district-list" class="form-select" onChange="getThana(this.value);">
+                    <label for="thana" class="form-label">Select Thana</label><br>
+                    <select name = "thana" id="thana-list" class="form-select" onChange="getThana(this.value);">
                       <option selected disabled>Choose...</option>
 
                       <?php
-                      foreach ($results as $district) {
-                          $dist = $district["district_name"];
+                      foreach ($results as $thana) {
+                          $than = $thana["thana_name"];
                          ?>
-                         <option value="<?php echo $district["district_id"]; ?>"><?php echo $district["district_name"]; ?></option>
+                         <option value="<?php echo $thana["thana_name"]; ?>"><?php echo $thana["thana_name"]; ?></option>
                          <?php
                       }
                       ?>
                     </select>
                 </div>
                 <br>
-                <div class="row">
-                    <label for="thana" class="form-label">Select Thana</label><br>
-                    <select name = "thana" id="thana-list" class="form-select">
-                      <option selected disabled>Choose...</option>
-                      <?php 
-                        // if($dist == "Dhaka") {
-                            echo '
-                            <option>Banani</option>
-                            <option>Badda</option>
-                            <option>Mahakhali</option>
-                            <option>Mirpur</option>
-                            <option>Rampura</option>
-                            <option>Savar</option>';
-                        // }
-                        // else {
-                        //     echo '
-                        //     <option>Anwara</option>';
-                        // }
-                      ?>
-                    </select>
-                </div>
+               
                     
             </div>
 
